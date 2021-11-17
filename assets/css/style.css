@@ -47,11 +47,20 @@ a{
 .color-main-accent{
     color: var(--MAIN_ACCENT);
 }
-nav{
+.main-navigation{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    height: auto;
+    padding-block: 0.5rem;
+    transition: all ease 0.3s;
+}
+.main-navigation.scrolled{
+    background-color: var(--BLACK);
+}
+nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,6 +72,9 @@ nav{
     font-size: xx-large;
     transform: rotate(-7deg);
     user-select: none;
+}
+.logo span{
+    color: var(--WHITE);
 }
 .navbar{
     position: fixed;
@@ -87,10 +99,6 @@ nav{
 .navbar::-webkit-scrollbar{
     display: none;
 }
-/* .navbar[aria-expanded="true"]{
-    display: flex;
-    right: 0;
-} */
 .navbar.is-open{
     transform: translateX(0);
 }

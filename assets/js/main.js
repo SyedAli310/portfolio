@@ -12,4 +12,11 @@ $(document).ready(function() {
         // }
         $('.navbar').toggleClass('is-open');
     })
+    $(document).on('scroll', ()=>{
+        if($(document).scrollTop() > 1){
+            $('.main-navigation').addClass('scrolled');
+        } else {
+            $('.main-navigation').removeClass('scrolled');
+        }
+    })
 });
