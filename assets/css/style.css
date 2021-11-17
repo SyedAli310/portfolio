@@ -48,6 +48,10 @@ a{
     color: var(--MAIN_ACCENT);
 }
 nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +66,7 @@ nav{
 }
 .navbar{
     position: fixed;
-    right: 4rem;
+    right: 1rem;
     top: 4.25rem;
     height: 75vh;
     min-width:15vw ;
