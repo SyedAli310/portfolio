@@ -14,7 +14,5 @@ $(document).ready(function() {
         // toggle navigation
         $('.navbar').toggleClass('is-open');
     })
-    $(document).on('scroll', ()=>{
-        checkScroll();
-    })
+    $(document).on('scroll', checkScroll)
 });
