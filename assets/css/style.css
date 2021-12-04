@@ -66,7 +66,26 @@ a {
   padding: 0;
   box-sizing: border-box;
 }
-
+.btn{
+  background-color: var(--BG_SHADE_LIGHTER);
+  outline: none;
+  border: 1px solid var(--BG_SHADE_LIGHTER);
+  border-radius: 2px;
+  padding: 10px 20px;
+  color: var(--COLORFULL_YELLOW);
+  cursor: pointer;
+  transition: all ease 300ms;
+}
+.btn:hover{
+  background-color: var(--BG_SHADE_DARKER);
+  border: 1px solid var(--COLORFULL_YELLOW);
+}
+.btn:active{
+  transform: scale(0.95);
+  box-shadow: 0px 0px 5px var(--COLORFULL_YELLOW);
+  background-color: var(--BLACK);
+  transition: all ease 300ms;
+}
 .bg-main-darker {
   background-color: var(--BG_SHADE_DARKER);
 }
@@ -265,24 +284,7 @@ nav {
   transform: translateY(-10%);
   opacity: 0;
 }
-#animated-text-hero ion-icon {
-  animation: hi 2s ease infinite;
-  transform-origin: 50% 50%;
-}
-@keyframes hi {
-  0% {
-    transform: rotate(0);
-  }
-  25%{
-    transform: rotate(15deg);
-  }
-  50% {
-    transform: rotate(-15deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
+
 @keyframes appear-from-middle {
   to{
    opacity: 1;
@@ -322,7 +324,14 @@ nav {
     color: var(--MAIN_ACCENT);
   }
 }
-
+.get-in-touch{
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.get-in-touch ion-icon{
+  transform: rotate(-45deg);
+}
 .name-span {
   position: relative;
   white-space: nowrap;
