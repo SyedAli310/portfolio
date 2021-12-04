@@ -186,7 +186,7 @@ nav {
   border: 1.5px solid var(--BG_SHADE_LIGHTER);
   transition: all ease 300ms;
 }
-/* .nav-links::after {
+.nav-links::after {
   content: "<";
   position: absolute;
   left: -50%;
@@ -211,7 +211,7 @@ nav {
 }
 .nav-links:hover::before {
   right: 0;
-} */
+}
 .nav-links a {
   display: block;
   width: inherit;
