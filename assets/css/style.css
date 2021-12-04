@@ -22,6 +22,7 @@ html {
 }
 body {
   overflow-x: hidden !important;
+  position: relative;
 }
 ::selection {
   background-color: #296fa8;
@@ -54,6 +55,10 @@ a {
   text-decoration: none;
   color: unset;
 }
+::selection {
+  background-color: var(--BLACK);
+  color: var(--MAIN_ACCENT);
+}
 .container {
   width: 100%;
   max-width: 90vw;
@@ -76,6 +81,7 @@ a {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 999;
   width: 100%;
   height: auto;
   padding-block: 0.5rem;
@@ -99,9 +105,14 @@ nav {
   transform: rotate(-7deg);
   user-select: none;
   cursor: pointer;
+  transition: all ease 300ms;
 }
 .logo span {
   color: var(--MAIN_ACCENT);
+}
+.logo:hover {
+  letter-spacing: 5px;
+  line-height: 2;
 }
 .navbar {
   position: fixed;
@@ -130,10 +141,16 @@ nav {
 .navbar.is-open {
   transform: translateX(0);
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navbar {
     min-width: 40vw;
     width: auto;
+  }
+  .nav-links a::after {
+    display: none;
+  }
+  .nav-links a::before {
+    display: none;
   }
 }
 .mobile-nav-toggle {
@@ -153,7 +170,7 @@ nav {
   width: 100%;
   height: 2px;
   background: var(--MAIN_ACCENT);
-  border-radius: 4px;
+  border-radius: 10px;
   transform-origin: 50% 50%;
   transition: all ease 300ms;
 }
@@ -192,7 +209,7 @@ nav {
   border: 1.5px solid var(--BG_SHADE_LIGHTER);
   transition: all ease 300ms;
 }
-.nav-links::after {
+.nav-links a::after {
   content: "<";
   position: absolute;
   left: -50%;
@@ -200,9 +217,11 @@ nav {
   transform: translate(0, -50%);
   width: auto;
   height: auto;
+  font-family: "Comfortaa", cursive;
+  font-size: x-large;
   transition: all ease 300ms;
 }
-.nav-links::before {
+.nav-links a::before {
   content: "/>";
   position: absolute;
   right: -50%;
@@ -210,13 +229,15 @@ nav {
   transform: translate(0, -50%);
   width: auto;
   height: auto;
+  font-family: "Comfortaa", cursive;
+  font-size: x-large;
   transition: all ease 300ms;
 }
-.nav-links:hover::after {
-  left: 0;
+.nav-links a:hover::after {
+  left: 5%;
 }
-.nav-links:hover::before {
-  right: 0;
+.nav-links a:hover::before {
+  right: 5%;
 }
 .nav-links a {
   display: block;
@@ -230,9 +251,125 @@ nav {
   color: var(--MAIN_ACCENT);
 }
 
-.test h1 {
+#animated-text-hero {
+  min-height: 80vh;
+  width: 100%;
+  text-align: center;
+  font-size: xx-large;
+  font-family: var(--MAIN_FONT);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transform: translateY(-10%);
+  opacity: 0;
+}
+#animated-text-hero ion-icon {
+  animation: hi 2s ease infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes hi {
+  0% {
+    transform: rotate(0);
+  }
+  25%{
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes appear-from-middle {
+  to{
+   opacity: 1;
+    transform: translateY(0);
+  }
+}
+#animated-text-hero h1 {
   color: var(--MAIN_ACCENT);
+  margin: 0;
+  animation: text-animation 1s ease-in-out infinite;
 }
-.test p {
+#animated-text-hero h1 span:not(.name-span) {
+  font-size: 8rem;
+}
+#animated-text-hero h2 {
   color: var(--WHITE);
+  animation: text-animation 1s ease-in-out infinite;
 }
+.hi-span {
+  animation: gradient-animation 3s backwards infinite;
+}
+
+@keyframes gradient-animation {
+  0% ,50%{
+    color: var(--MAIN_ACCENT);
+  }
+  25% {
+    color: var(--COLORFULL_PINK);
+  }
+  50%,100% {
+    color: var(--COLORFULL_YELLOW);
+  }
+  75% {
+    color: var(--COLORFULL_PINK);
+  }
+  100% {
+    color: var(--MAIN_ACCENT);
+  }
+}
+
+.name-span {
+  position: relative;
+  white-space: nowrap;
+  color: var(--COLORFULL_YELLOW);
+  font-family: "Comforter Brush", cursive;
+  letter-spacing: 5px;
+  transition: all ease 300ms;
+}
+.name-span::after{
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 2px;
+  background: var(--COLORFULL_YELLOW);
+  opacity: 0;
+  transition: all ease 300ms;
+}
+.name-span:hover {
+  color: var(--COLORFULL_PURPLE);
+}
+.name-span:hover::after {
+  opacity: 1;
+  width: 65%;
+}
+.profession-span{
+  position: relative;
+  white-space: nowrap;
+  color: var(--MAIN_ACCENT);
+  background-color: var(--LIGHT_BLACK);
+  border-radius: 3px;
+  padding: 0 .5rem;
+}
+/* .profession-span::after{
+  content: '';
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  border-radius: 5px;
+  border-bottom: 2px solid var(--COLORFULL_YELLOW);
+  height: 12px;
+  background: var(--BG_SHADE_LIGHTER);
+  opacity: 0.75;
+  box-shadow: 1px 0.5px 12px var(--COLORFULL_PURPLE);
+  transition: all ease 300ms;
+} */
