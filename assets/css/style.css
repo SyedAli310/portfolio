@@ -352,7 +352,6 @@ nav {
 }
 .profession-span{
   position: relative;
-  white-space: nowrap;
   color: var(--MAIN_ACCENT);
   background-color: var(--LIGHT_BLACK);
   border-radius: 3px;
