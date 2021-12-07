@@ -227,10 +227,11 @@ nav {
   font-size: 1.25rem;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid var(--BG_SHADE_DARKER);
-  border-left: 1px solid var(--BG_SHADE_LIGHTER);
+  border: 1px solid var(--WHITE);
+  border-radius: 4px;
+  /* border-left: 1px solid var(--BG_SHADE_LIGHTER);
   border-right: 1px solid var(--BG_SHADE_LIGHTER);
-  border-top: 1px solid var(--BG_SHADE_LIGHTER);
+  border-top: 1px solid var(--BG_SHADE_LIGHTER); */
   transition: all ease 300ms;
 }
 .nav-links a::after {
@@ -277,6 +278,7 @@ nav {
 }
 
 #animated-text-hero {
+  position: relative;
   min-height: 80vh;
   width: 100%;
   text-align: center;
@@ -291,6 +293,32 @@ nav {
   opacity: 0;
 }
 
+.navbar::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/blob-navbar.svg')no-repeat center center;
+  opacity: 0.25;
+  backdrop-filter: blur(10px);
+  z-index: -1;
+  transition: all ease 300ms;
+}
+#animated-text-hero::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/blob-1.svg')no-repeat center center;
+  opacity: 0.25;
+  backdrop-filter: blur(10px);
+  z-index: -1;
+  transition: all ease 300ms;
+}
 @keyframes appear-from-middle {
   to{
    opacity: 1;
