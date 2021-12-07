@@ -231,7 +231,6 @@ nav {
   border-left: 1px solid var(--BG_SHADE_LIGHTER);
   border-right: 1px solid var(--BG_SHADE_LIGHTER);
   border-top: 1px solid var(--BG_SHADE_LIGHTER);
-  border-collapse: separate;
   transition: all ease 300ms;
 }
 .nav-links a::after {
@@ -331,9 +330,6 @@ nav {
 .profession-span.pre-animation {
   opacity: 0;
   transform: translateY(100%) scale(0.5) rotateX(360deg);
-}
-
-.hi-span {
 }
 
 @keyframes gradient-animation {
