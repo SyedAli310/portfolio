@@ -18,7 +18,8 @@ $(document).ready(() => {
   });
   $(document).on("scroll", checkScroll);
   animatedHero.style.animation = "appear-from-middle ease 1s forwards";
-  hiSpan.style.animation = "slide-in-left 2s ease 1s forwards, gradient-animation 3s backwards infinite";
+  hiSpan.style.animation =
+    "slide-in-left 2s ease 1s forwards, gradient-animation 3s backwards infinite";
   function changeProfessionText() {
     const professionText = document.querySelector(".profession-span");
     const professionTextArray = [
