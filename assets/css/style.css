@@ -374,9 +374,36 @@ nav {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
+  padding: 12px 22px;
+  border: 1px solid var(--WHITE);
+  border-radius: 4px;
+  background-color: var(--LIGHT_BLACK);
+  color: var(--MAIN_ACCENT);
+  font-size: large;
 }
 .get-in-touch ion-icon{
   transform: rotate(-45deg);
+}
+.get-in-touch:hover > ion-icon{
+  animation: bibble 2s ease-in-out infinite
+}
+@keyframes bibble {
+  0% {
+    transform: rotate(-45deg);
+  }
+  25% {
+    transform: rotate(-35deg);
+  }
+  50% {
+    transform: rotate(-50deg);
+  }
+  75% {
+    transform: rotate(-35deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+  
 }
 .name-span {
   position: relative;
