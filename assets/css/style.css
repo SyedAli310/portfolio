@@ -455,11 +455,12 @@ nav {
 .floating-skills {
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap !important;
   gap: 2rem;
   border-radius: 10px;
+  margin-top: 1rem;
   min-height: 30vh;
 }
 
