@@ -155,6 +155,20 @@ nav {
   transform: translateX(1000%);
   transition: all 300ms ease;
 }
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/blob-navbar.svg") no-repeat center center;
+  background-position: fixed;
+  background-size: cover;
+  opacity: 0.25;
+  z-index: -1;
+  transition: all ease 300ms;
+}
 .navbar::-webkit-scrollbar {
   display: none;
 }
@@ -287,18 +301,6 @@ nav {
   opacity: 0;
 }
 
-.navbar::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/blob-navbar.svg") no-repeat center center;
-  opacity: 0.25;
-  z-index: -1;
-  transition: all ease 300ms;
-}
 #animated-text-hero::before {
   content: "";
   position: absolute;
@@ -307,6 +309,8 @@ nav {
   width: 100%;
   height: 100%;
   background: url("../img/blob-1.svg") no-repeat center center;
+  background-position: fixed;
+  background-size: cover auto;
   opacity: 0.25;
   backdrop-filter: blur(10px);
   z-index: -1;
