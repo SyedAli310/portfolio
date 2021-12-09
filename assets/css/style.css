@@ -438,26 +438,39 @@ nav {
   width: 65%;
 }
 
-
-div.a, div.b, div.c, div.d {
+.floating-skills{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--LIGHT_BLACK);
+  border-radius: 10px;
+  min-height: 50vh;
+  box-shadow: 1px 2px 10px var(--BG_SHADE_LIGHTER);
+}
+.floating-icons{
   width: 50px;
   height:50px;
-  /* background-color:var(--COLORFULL_YELLOW); */
-  font-size: larger;
-  position:fixed;
-  z-index: -1;
+  position:absolute;
+  font-size: small;
   opacity: 0.45;
+  text-align: center;
   border-radius: 6px;
 }
-div.a{
-  color: var(--COLORFULL_YELLOW);
+.floating-icons ion-icon{
+  font-size: x-large !important;
 }
-div.b{
-  color: var(--COLORFULL_PURPLE);
-}
-div.c{
+.floating-icons[name='logo-js']{
   color: yellow;
 }
-div.d{
+.floating-icons[name='logo-html']{
+  color: var(--COLORFULL_YELLOW);
+}
+.floating-icons[name='logo-python']{
+  color: lightblue;
+}
+.floating-icons[name='logo-nodejs']{
   color: #08d565;
 }
