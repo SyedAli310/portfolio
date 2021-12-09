@@ -458,7 +458,7 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap !important;
-  gap: 2rem;
+  gap: 2.5rem;
   border-radius: 10px;
   margin-top: 1rem;
   min-height: 30vh;
