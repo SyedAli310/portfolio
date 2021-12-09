@@ -60,7 +60,7 @@ a {
   background-color: var(--BLACK);
   color: var(--MAIN_ACCENT);
 }
-main{
+main {
   position: relative;
 }
 .container {
@@ -71,7 +71,7 @@ main{
   padding: 0;
   box-sizing: border-box;
 }
-.section-heading{
+.section-heading {
   margin-block-start: unset;
   margin-block-end: unset;
   font-size: 2rem;
@@ -463,7 +463,21 @@ nav {
   margin-top: 1rem;
   min-height: 30vh;
 }
-
+.floating-skills .header{
+  position:relative;
+}
+.floating-skills .header::before{
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 75%;
+  height: 0.25rem;
+  border-radius: 3px;
+  background-color: var(--COLORFULL_YELLOW);
+  transition: all ease 300ms;
+}
 .floating-icons {
   width: 50px;
   height: 50px;
@@ -473,6 +487,7 @@ nav {
   align-items: center;
   border-radius: 6px;
   transform: translateY(-20%);
+  margin-bottom: 2rem;
   opacity: 0;
   /* animation: slide-in-up ease 300ms forwards; */
   transition: all ease 300ms;
