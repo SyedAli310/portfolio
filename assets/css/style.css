@@ -437,3 +437,27 @@ nav {
   opacity: 1;
   width: 65%;
 }
+
+
+div.a, div.b, div.c, div.d {
+  width: 50px;
+  height:50px;
+  /* background-color:var(--COLORFULL_YELLOW); */
+  font-size: larger;
+  position:fixed;
+  z-index: -1;
+  opacity: 0.45;
+  border-radius: 6px;
+}
+div.a{
+  color: var(--COLORFULL_YELLOW);
+}
+div.b{
+  color: var(--COLORFULL_PURPLE);
+}
+div.c{
+  color: yellow;
+}
+div.d{
+  color: #08d565;
+}
