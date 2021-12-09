@@ -445,7 +445,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap !important;
-  gap: 1rem;
+  gap: 2rem;
   /* background-color: var(--LIGHT_BLACK); */
   border-radius: 10px;
   min-height: 50vh;
