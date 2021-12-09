@@ -10,6 +10,7 @@
   --COLORFULL_PINK: #f83097;
   --COLORFULL_YELLOW: #e97518;
   --COLORFULL_PURPLE: #6718e9;
+  --delay: 100ms;
   --MAIN_FONT: "Montserrat", sans-serif;
 }
 body,
@@ -438,39 +439,76 @@ nav {
   width: 65%;
 }
 
-.floating-skills{
+.floating-skills {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap !important;
+  gap: 1rem;
+  /* background-color: var(--LIGHT_BLACK); */
+  border-radius: 10px;
+  min-height: 50vh;
+  /* box-shadow: 1px 2px 10px var(--BG_SHADE_LIGHTER); */
+}
+.floating-icons {
+  width: 50px;
+  height: 50px;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  background-color: var(--LIGHT_BLACK);
-  border-radius: 10px;
-  min-height: 50vh;
-  box-shadow: 1px 2px 10px var(--BG_SHADE_LIGHTER);
-}
-.floating-icons{
-  width: 50px;
-  height:50px;
-  position:absolute;
-  font-size: small;
-  opacity: 0.45;
-  text-align: center;
   border-radius: 6px;
+  transform: translateY(-20%);
+  opacity: 0;
+  /* animation: slide-in-up ease 300ms forwards; */
+  transition: all ease 300ms;
 }
-.floating-icons ion-icon{
-  font-size: x-large !important;
+/* .floating-icons:nth-child(1){
+  animation-delay: calc(var(--delay)*1);
 }
-.floating-icons[name='logo-js']{
-  color: yellow;
+.floating-icons:nth-child(2){
+  animation-delay: calc(var(--delay)*2);
 }
-.floating-icons[name='logo-html']{
-  color: var(--COLORFULL_YELLOW);
+.floating-icons:nth-child(3){
+  animation-delay: calc(var(--delay)*3);
 }
-.floating-icons[name='logo-python']{
-  color: lightblue;
+.floating-icons:nth-child(4){
+  animation-delay: calc(var(--delay)*4);
 }
-.floating-icons[name='logo-nodejs']{
-  color: #08d565;
+.floating-icons:nth-child(5){
+  animation-delay: calc(var(--delay)*5);
+}
+.floating-icons:nth-child(6){
+  animation-delay: calc(var(--delay)*6);
+}
+.floating-icons:nth-child(7){
+  animation-delay: calc(var(--delay)*7);
+}
+.floating-icons:nth-child(8){
+  animation-delay: calc(var(--delay)*8);
+} */
+@keyframes slide-in-up {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.floating-icons span {
+  opacity: 0;
+  visibility: hidden;
+  color: var(--WHITE);
+  transition: all ease 300ms;
+}
+.floating-icons:hover > span {
+  margin-top: 1rem;
+  opacity: 1;
+  visibility: visible;
+}
+.floating-icons img {
+  transition: all ease 300ms;
+}
+.floating-icons:hover > img {
+  transform: scale(1.2);
 }

@@ -1,10 +1,10 @@
 $(document).ready(function () {
     // random skill floating animation
-  animateDiv('.floating-icons[name="logo-js"]');
-  animateDiv('.floating-icons[name="logo-html"]');
-  animateDiv('.floating-icons[name="logo-python"]');
-  animateDiv('.floating-icons[name="logo-nodejs"]');
-
+    const floatingIcons = document.querySelectorAll('.floating-icons');
+     floatingIcons.forEach( (icon, index) => {
+       icon.style.animation = 'slide-in-up ease 300ms forwards'
+       icon.style.animationDelay=`${100 * index}ms`;
+     })
   function makeNewPosition() {
     // Get viewport dimensions (remove the dimension of the div)
     var h = $(".floating-skills").height() - 50;
