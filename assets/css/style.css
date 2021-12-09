@@ -355,7 +355,7 @@ nav {
 }
 .profession-span.pre-animation {
   opacity: 0;
-  transform: translateY(100%) scale(0.5) rotateX(360deg);
+  transform: translateY(100%) scale(0.75);
 }
 
 @keyframes gradient-animation {
