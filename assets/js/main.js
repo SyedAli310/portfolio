@@ -17,6 +17,9 @@ $(document).ready(() => {
   $('.get-in-touch-btn').on('click',(e)=>{
     $('.modal').addClass('active');
   })
+  $('.open-modal-btn').on('click',(e)=>{
+    $('.modal').addClass('active');
+  })
   $('.modal-close-btn').on('click',(e)=>{
     $('.modal').toggleClass('active');
   })
