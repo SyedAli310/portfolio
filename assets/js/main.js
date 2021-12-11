@@ -14,6 +14,12 @@ $(document).ready(() => {
     $(".navbar").toggleClass("is-open");
   });
   $(document).on("scroll", checkScroll);
+  $('.get-in-touch-btn').on('click',(e)=>{
+    $('.modal').addClass('active');
+  })
+  $('.modal-close-btn').on('click',(e)=>{
+    $('.modal').toggleClass('active');
+  })
   $('.modal-close-btn').on('mouseenter', () => {
     $('.modal-body').addClass('to-be-closed');
     $('.modal-header').addClass('to-be-closed');

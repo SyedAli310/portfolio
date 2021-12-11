@@ -26,12 +26,7 @@ $(document).ready(function () {
     }, 3500);
   }
   changeProfessionText();
-  $('.get-in-touch-btn').on('click',(e)=>{
-    $('.modal').addClass('active');
-  })
-  $('.modal-close-btn').on('click',(e)=>{
-    $('.modal').toggleClass('active');
-  })
+
   $('#get-in-touch-form').on('submit',(e)=>{
     e.preventDefault();
     const name = $('#name').val();
