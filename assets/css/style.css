@@ -249,6 +249,7 @@ main {
 {
   height: 60vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   color: var(--WHITE);
   padding: 1rem;
 }
@@ -739,6 +740,10 @@ nav {
   text-align: center;
   margin-bottom: 1rem;
 }
+.socials span:first-child, .socials span:last-child{
+  color: var(--COLORFULL_YELLOW);
+  margin-bottom: 1rem;
+}
 .social-links{
   display: flex;
   justify-content: space-evenly;
@@ -753,6 +758,8 @@ nav {
   align-items: center;
   gap: 1rem;
   margin: 1rem;
+  color:var(--WHITE);
+  opacity: 0.5;
 }
 .or-section hr{
   width: 100%;
@@ -761,11 +768,12 @@ nav {
 #get-in-touch-form{
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0.75rem 0;
   background-color: var(--BG_SHADE_LIGHTER);
   border-radius: 10px;
 }
@@ -777,7 +785,7 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 .input-group-append .input-group{
@@ -785,7 +793,7 @@ nav {
 }
 .input-group input, .input-group textarea{
   position: relative;
-  width: auto;
+  width: max-content;
   height: auto;
   border: none;
   border-radius: 6px;
@@ -820,7 +828,7 @@ nav {
 .input-group-append{
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
