@@ -32,5 +32,12 @@ $(document).ready(function () {
   $('.modal-close-btn').on('click',(e)=>{
     $('.modal').toggleClass('active');
   })
-
+  $('#get-in-touch-form').on('submit',(e)=>{
+    e.preventDefault();
+    const name = $('#name').val();
+    const email = $('#email').val();
+    const message = $('#message').val();
+    const data = {name ,email, message}
+    console.log('formData',data);
+  })
 });

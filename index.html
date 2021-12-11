@@ -62,7 +62,9 @@
           </h1>
           <h2><div class="profession-span">Software Engineer</div></h2>
           <button class="btn get-in-touch-btn">
-            <ion-icon name="send-outline"></ion-icon>Get in Touch
+            <ion-icon name="send-outline"></ion-icon>
+            &nbsp;
+            <span> Get in Touch</span>
           </button>
         </hero>
         <div class="test" style="margin-top: 2.5rem">
@@ -99,20 +101,71 @@
           <h2>Get in Touch</h2>
         </div>
         <div class="modal-body">
-          <form action="">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" />
+          <div class="socials">
+            <span>Connect with me on my socials</span>
+            <div class="social-links">
+              <a
+                href="
+                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
+                target="_blank"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+              <a
+                href="
+                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
+                target="_blank"
+              >
+              <ion-icon name="mail-outline"></ion-icon>
+              </a>
+              <a
+                href="
+                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
+                target="_blank"
+              >
+              <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+              <a
+                href="
+                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
+                target="_blank"
+              >
+              <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+              <a
+                href="
+                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
+                target="_blank"
+              >
+              <ion-icon name="logo-github"></ion-icon>
+              </a>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" />
+            <div class="or-section">
+              <hr>
+              <span>or</span>
+              <hr>
             </div>
-            <div class="form-group">
+            <span>Write me a message directly</span>
+          </div>
+          <form id="get-in-touch-form">
+            <div class="input-group-append">
+              <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder=" enter name" />
+              </div>
+              <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder=" enter email"/>
+              </div>
+            </div>
+            <div class="input-group">
               <label for="message">Message</label>
-              <textarea name="message" id="message" cols="30" rows="10"></textarea>
+              <textarea name="message" id="message" rows="5" placeholder=" enter message"></textarea>
             </div>
-            <button class="btn">Send</button>
+            <button class="btn" id="modal-send-msg-btn">
+              <span>Send</span>
+              <ion-icon name="send-outline"></ion-icon>
+            </button>
           </form>
         </div>
         <!-- <div class="modal-footer">
