@@ -397,7 +397,7 @@ nav {
 }
 @media (max-width: 900px) {
   .navbar {
-    min-width: 40vw;
+    min-width: 50vw;
     width: auto;
   }
   .nav-links a::after {
