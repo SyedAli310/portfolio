@@ -9,10 +9,10 @@ $(document).ready(function () {
   function changeProfessionText() {
     const professionText = document.querySelector(".profession-span");
     const professionTextArray = [
-      "<ion-icon name='globe-outline'></ion-icon>Web Developer",
-      "<ion-icon name='globe-outline'></ion-icon>Web Designer",
-      "<ion-icon name='globe-outline'></ion-icon>UI/UX Designer",
-      "<ion-icon name='globe-outline'></ion-icon>Graphic Designer",
+      "<ion-icon name='logo-web-component'></ion-icon>&nbsp;Web Designer",
+      "<ion-icon name='globe-outline'></ion-icon>&nbsp;Web Developer",
+      "<ion-icon name='desktop-outline'></ion-icon>&nbsp;UI/UX Designer",
+      "<ion-icon name='game-controller-outline'></ion-icon>&nbsp;Graphic Designer",
     ];
     let index = 0;
     setInterval(() => {
@@ -29,6 +29,7 @@ $(document).ready(function () {
   }
   changeProfessionText();
 
+  //submit get-in-touch form
   $('#get-in-touch-form').on('submit',(e)=>{
     e.preventDefault();
     $('#modal-send-msg-btn').html(`${smallSpinner}&nbsp;Sending`);
@@ -51,7 +52,7 @@ $(document).ready(function () {
     }
   });
 
-  //floating labels by jQuery
+  //floating input labels on focus
   getInTouchFormInpFields.forEach((field)=>{
     $(field).on('focus',(e)=>{
       $(e.target).siblings(".input-label").css('transform','translateY(0)');

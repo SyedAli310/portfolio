@@ -1,4 +1,6 @@
-$(document).ready(() => {
+$(document).ready(() => {   //<-start of document ready->//
+  
+  // function to check the document scroll location
   function checkScroll() {
     if ($(document).scrollTop() > 1) {
       $(".main-navigation").addClass("scrolled");
@@ -7,13 +9,19 @@ $(document).ready(() => {
     }
   }
   checkScroll();
+
+  // toggle (open/close) navigation-menu
   $("#mobile-nav-toggle").on("click", () => {
     // animate button
     $("#mobile-nav-toggle").toggleClass("open");
     // toggle navigation
     $(".navbar").toggleClass("is-open");
   });
+
+  // run checkScroll() function whenever window is scrolled
   $(document).on("scroll", checkScroll);
+
+  // modal open/close handlers
   $(".get-in-touch-btn").on("click", (e) => {
     $(".get-in-touch-modal").addClass("active");
   });
@@ -23,6 +31,8 @@ $(document).ready(() => {
   $(".modal-close-btn").on("click", (e) => {
     $(".modal").toggleClass("active");
   });
+
+  // modal blur on close-btn hover handlers
   $(".modal-close-btn").on("mouseenter", () => {
     $(".modal-body").addClass("to-be-closed");
     $(".modal-header").addClass("to-be-closed");
@@ -31,12 +41,33 @@ $(document).ready(() => {
     $(".modal-body").removeClass("to-be-closed");
     $(".modal-header").removeClass("to-be-closed");
   });
+
+  // close modal on clicking outside of modal
   $(".modal").on("click", (e) => {
     if (
-      $(".modal").hasClass("active") &&
+      $(e.target).hasClass("active") &&
       e.target.classList.contains("modal")
     ) {
-      $(".modal").removeClass("active");
+      $(e.target).removeClass("active");
     }
   });
+
+  //close navigation-menu on clicking outside of navigation-menu
+  $("body").on("click", (e) => {
+    if (
+      $(".navbar").hasClass("is-open") &&
+      !$(e.target).hasClass("navbar") &&
+      !$(e.target).hasClass("mobile-nav-toggle") &&
+      !$(e.target).hasClass("hamburger")
+    ) {
+      // animate button
+      $("#mobile-nav-toggle").removeClass("open");
+      // toggle navigation
+      $(".navbar").removeClass("is-open");
+    } else {
+      return;
+    }
+  });
+
+//<-end of document ready->//
 });
