@@ -176,6 +176,9 @@ ion-icon{
   background-color: var(--MODAL_BG_TRANSPARENT);
   backdrop-filter: blur(10px);
 }
+.modal::-webkit-scrollbar{
+  display: none;
+}
 .modal.active{
   display: flex;
 }
@@ -220,6 +223,7 @@ ion-icon{
   height: 2.25rem;
   width: 2.25rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   position: absolute;
   top: -1rem;
@@ -746,10 +750,14 @@ nav {
 }
 .socials{
   text-align: center;
-  margin-bottom: 1rem;
+  margin:1.5rem 0;
 }
-.socials span:first-child, .socials span:last-child{
+.get-in-touch-modal-sub-heading
+{
   color: var(--COLORFULL_YELLOW);
+  font-size: large;
+  margin-bottom:3rem;
+  margin-top: 0;
 }
 .social-links{
   display: flex;
@@ -813,27 +821,44 @@ nav {
   background-color: var(--BG_SHADE_LIGHTER);
   border-radius: 10px;
 }
+.appended-inputs{
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.appended-inputs .input-group{
+  width:auto;
+  flex: auto;
+}
 .input-group{
   position: relative;
+  width: 95%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
   text-align: center;
 }
-.input-group-append .input-group{
-  flex-direction: row;
+textarea::-webkit-scrollbar{
+  background-color: transparent;
+  width: 0.25rem;
+}
+textarea::-webkit-scrollbar-thumb{
+  background-color: var(--COLORFULL_YELLOW);
 }
 .input-group input, .input-group textarea{
   position: relative;
-  width: 95%;
+  width: 100%;
   height: auto;
   border: none;
+  flex-grow: auto;
   border-radius: 6px;
-  background-color: var(--LIGHT_BLACK);  
+  background-color: var(--LIGHT_BLACK);
   color: var(--WHITE);
   font-family: inherit;
   font-size: large;
@@ -841,7 +866,8 @@ nav {
   transition: all ease 300ms;
 }
 .input-group textarea{
-  width: auto;
+  height: 5rem !important;
+  width: 100% !important;
   resize: none;
 }
 /* .input-group label{
@@ -855,11 +881,14 @@ nav {
   font-weight:lighter;
   opacity: 0.75;
 }
-.input-group input:focus, .input-group textarea:focus{
-  outline: 1px solid var(--COLORFULL_YELLOW);
+.input-field:focus{
+  outline: 1px solid var(--MAIN_ACCENT);
+}
+.input-field:focus + .input-label{
+  color: var(--MAIN_ACCENT) !important;
 }
 .input-group input:focus::placeholder, .input-group textarea:focus::placeholder{
-  color: var(--COLORFULL_YELLOW);
+  color: var(--MAIN_ACCENT);
   font-weight:lighter;
   opacity: 0.75;
 }

@@ -15,7 +15,7 @@ $(document).ready(() => {
   });
   $(document).on("scroll", checkScroll);
   $(".get-in-touch-btn").on("click", (e) => {
-    $(".modal").addClass("active");
+    $(".get-in-touch-modal").addClass("active");
   });
   $(".open-modal-btn").on("click", (e) => {
     $(".modal").addClass("active");

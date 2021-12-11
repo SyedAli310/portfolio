@@ -104,7 +104,7 @@
         </div>
         <div class="modal-body">
           <div class="socials">
-            <span>Connect with me on my socials</span>
+            <span class="get-in-touch-modal-sub-heading">Connect with me on my socials</span>
             <div class="social-links">
               <a href="https://www.linkedin.com/in/syed-ali-058b7610b/" target="_blank" title="LinkedIn - Syed Ali">
                 <span class="social-links-name">LinkedIn</span>
@@ -132,13 +132,14 @@
               <span>or</span>
               <hr />
             </div>
-            <span>Write me a message directly</span>
           </div>
           <form id="get-in-touch-form">
-            <div class="input-group-append">
+            <span  class="get-in-touch-modal-sub-heading">Send me a message directly</span>
+            <div class="appended-inputs">
               <div class="input-group">
-                <label for="name">Name</label>
+                <label for="name" class="input-label">Name</label>
                 <input
+                  class="input-field"
                   type="text"
                   name="name"
                   id="name"
@@ -147,8 +148,9 @@
                 />
               </div>
               <div class="input-group">
-                <label for="email">Email</label>
+                <label for="email" class="input-label">Email</label>
                 <input
+                  class="input-field"
                   type="email"
                   name="email"
                   id="email"
@@ -158,11 +160,11 @@
               </div>
             </div>
             <div class="input-group">
-              <label for="message">Message</label>
+              <label for="message" class="input-label">Message</label>
               <textarea
+                class="input-field"
                 name="message"
                 id="message"
-                rows="5"
                 placeholder=" enter message"
                 required
               ></textarea>
