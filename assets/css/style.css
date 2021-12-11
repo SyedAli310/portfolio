@@ -190,14 +190,14 @@ ion-icon{
   border-radius: 5px;
   border: 2px solid var(--BG_SHADE_LIGHTER);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  animation: animatetop 0.5s ease;
+  animation: modalAppear 0.5s ease;
 }
-@-webkit-keyframes animatetop
+@-webkit-keyframes modalAppear
 {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
-@keyframes animatetop
+@keyframes modalAppear
 {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
