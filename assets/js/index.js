@@ -41,18 +41,19 @@ $(document).ready(function () {
       $('#message').val('');
     }
   });
+
+  //floating labels by jQuery
   getInTouchFormInpFields.forEach((field)=>{
     $(field).on('focus',(e)=>{
-      // console.log($(e.target).siblings(".input-label"));
       $(e.target).siblings(".input-label").css('transform','translateY(0)');
       $(e.target).siblings(".input-label").css('opacity','1');
       $(e.target).siblings(".input-label").css('visibility','visible');
     })
     $(field).on('blur',(e)=>{
-      // console.log($(e.target).siblings(".input-label"));
       $(e.target).siblings(".input-label").css('transform','translateY(50%)');
       $(e.target).siblings(".input-label").css('opacity','0');
       $(e.target).siblings(".input-label").css('visibility','hidden');
     })
-  });
-});
+  })
+
+})

@@ -847,6 +847,7 @@ nav {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 .input-group-append .input-group{
   width:auto;
