@@ -216,34 +216,41 @@ main {
 }
 .modal-close-btn
 {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.25rem;
+  width: 2.25rem;
   display: flex;
   align-items: center;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: var(--TEXT_DANGER);
-  color: var(--WHITE);
+  top: -1rem;
+  right: -1rem;
+  background-color: var(--LIGHT_BLACK);
+  color: var(--TEXT_DANGER);
   outline: none;
   border: 1.5px solid var(--WHITE);
+  font-size: x-large !important;
   border-radius: 100%;
   z-index: 9999;
   transition: all ease 300ms;
 }
 .modal-close-btn:hover
 {
-  background-color: var(--LIGHT_BLACK);
+  background-color: var(--TEXT_DANGER);
+  color: var(--WHITE);
   transform: scale(1.125);
 }
 .modal-close-btn > ion-icon{
-  font-size: x-large !important;
-  font-weight: bold !important;
   transition: all ease 500ms;
 }
 .modal-close-btn:hover > ion-icon{
-  transform: rotateY(180deg) rotateX(180deg) rotateZ(90deg);
-  color: var(--MAIN_ACCENT);
+  transform: rotateY(180deg) rotateX(180deg) rotateZ(90deg) scale(1.5);
+}
+.modal-header.to-be-closed{
+  opacity: 0.5;
+  filter: blur(2px);
+}
+.modal-body.to-be-closed{
+  opacity: 0.5;
+  filter: blur(2px);
 }
 .modal-body
 {
@@ -742,7 +749,6 @@ nav {
 }
 .socials span:first-child, .socials span:last-child{
   color: var(--COLORFULL_YELLOW);
-  margin-bottom: 1rem;
 }
 .social-links{
   display: flex;
@@ -750,7 +756,15 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin: 1rem;
+  margin: 1.5rem;
+}
+.social-links ion-icon{
+  font-size: larger;
+  color: var(--WHITE);
+  transition: all ease 300ms;
+}
+.social-links ion-icon:hover{
+  color: var(--COLORFULL_PINK);
 }
 .or-section{
   display: flex;
@@ -842,7 +856,7 @@ nav {
   gap: 0.5rem;
   background-color: var(--TEXT_SUCCESS);
   color: var(--WHITE);
-  border: none;
+  border: 2px solid var(--TEXT_SUCCESS);
   border-radius: 6px;
   padding: 0.5rem 1rem;
   font-size: large;
@@ -851,6 +865,13 @@ nav {
   transition: all ease 300ms;
 }
 
-#modal-send-msg-btn:hover{
+#modal-send-msg-btn:hover, #modal-send-msg-btn:focus-visible{
   background-color: var(--MAIN_ACCENT);
+  border: 2px solid var(--WHITE);
+}
+#modal-send-msg-btn ion-icon{
+  transition: all ease 300ms;
+}
+#modal-send-msg-btn:hover > ion-icon{
+  transform: translateX(10%);
 }

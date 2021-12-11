@@ -38,6 +38,11 @@ $(document).ready(function () {
     const email = $('#email').val();
     const message = $('#message').val();
     const data = {name ,email, message}
-    console.log('formData',data);
+    if(data && name && email && message){
+      console.log('formData',data);
+      $('#name').val('');
+      $('#email').val('');
+      $('#message').val('');
+    }
   })
 });

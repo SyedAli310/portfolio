@@ -44,7 +44,7 @@
       </nav>
     </div>
 
-    <main style="margin-top: 7rem;">
+    <main style="margin-top: 7rem">
       <div class="container">
         <hero id="animated-text-hero">
           <h1>
@@ -95,8 +95,10 @@
     </main>
 
     <div class="modal get-in-touch-modal">
-      <button class="modal-close-btn"><ion-icon name="close-outline"></ion-icon></button>
       <div class="modal-content">
+        <button class="modal-close-btn">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
         <div class="modal-header">
           <h2>Get in Touch</h2>
         </div>
@@ -104,46 +106,26 @@
           <div class="socials">
             <span>Connect with me on my socials</span>
             <div class="social-links">
-              <a
-                href="
-                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
-                target="_blank"
-              >
+              <a href="https://www.linkedin.com/in/syed-ali-058b7610b/" target="_blank" title="LinkedIn - Syed Ali">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
-              <a
-                href="
-                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
-                target="_blank"
-              >
-              <ion-icon name="mail-outline"></ion-icon>
+              <a href="mailto:alizaidi310@gmail.com?Subject=Hi there, Loved your portfolio!" title="alizaidi310@gmail.com">
+                <ion-icon name="mail-outline"></ion-icon>
               </a>
-              <a
-                href="
-                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
-                target="_blank"
-              >
-              <ion-icon name="logo-instagram"></ion-icon>
+              <a href="https://www.instagram.com/_s.y.e.d.__.a.l.i/" target="_blank" title="Instagram - Syed Ali">
+                <ion-icon name="logo-instagram"></ion-icon>
               </a>
-              <a
-                href="
-                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
-                target="_blank"
-              >
-              <ion-icon name="logo-twitter"></ion-icon>
+              <a href="https://twitter.com/alizaidi310" target="_blank" title="Twitter - Syed Ali">
+                <ion-icon name="logo-twitter"></ion-icon>
               </a>
-              <a
-                href="
-                  https://www.linkedin.com/in/syed-ali-b9a8b917b/"
-                target="_blank"
-              >
-              <ion-icon name="logo-github"></ion-icon>
+              <a href="https://www.github.com/SyedAli310" target="_blank" title="GitHub - Syed Ali">
+                <ion-icon name="logo-github"></ion-icon>
               </a>
             </div>
             <div class="or-section">
-              <hr>
+              <hr />
               <span>or</span>
-              <hr>
+              <hr />
             </div>
             <span>Write me a message directly</span>
           </div>
@@ -151,16 +133,34 @@
             <div class="input-group-append">
               <div class="input-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder=" enter name" />
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder=" enter name"
+                  required
+                />
               </div>
               <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder=" enter email"/>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder=" enter email"
+                  required
+                />
               </div>
             </div>
             <div class="input-group">
               <label for="message">Message</label>
-              <textarea name="message" id="message" rows="5" placeholder=" enter message"></textarea>
+              <textarea
+                name="message"
+                id="message"
+                rows="5"
+                placeholder=" enter message"
+                required
+              ></textarea>
             </div>
             <button class="btn" id="modal-send-msg-btn">
               <span>Send</span>
