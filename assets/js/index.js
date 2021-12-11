@@ -1,6 +1,7 @@
 $(document).ready(function () {
   const animatedHero = document.querySelector("#animated-text-hero");
   const hiSpan = document.querySelector("#animated-text-hero .hi-span");
+  const getInTouchFormInpFields = document.querySelectorAll('.modal .input-field');
   animatedHero.style.animation = "appear-from-middle ease 1s forwards";
   hiSpan.style.animation =
     "slide-in-left 2s ease 1s forwards, gradient-animation 3s backwards infinite";
@@ -39,5 +40,19 @@ $(document).ready(function () {
       $('#email').val('');
       $('#message').val('');
     }
-  })
+  });
+  getInTouchFormInpFields.forEach((field)=>{
+    $(field).on('focus',(e)=>{
+      // console.log($(e.target).siblings(".input-label"));
+      $(e.target).siblings(".input-label").css('transform','translateY(0)');
+      $(e.target).siblings(".input-label").css('opacity','1');
+      $(e.target).siblings(".input-label").css('visibility','visible');
+    })
+    $(field).on('blur',(e)=>{
+      // console.log($(e.target).siblings(".input-label"));
+      $(e.target).siblings(".input-label").css('transform','translateY(50%)');
+      $(e.target).siblings(".input-label").css('opacity','0');
+      $(e.target).siblings(".input-label").css('visibility','hidden');
+    })
+  });
 });

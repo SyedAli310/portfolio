@@ -67,6 +67,13 @@ h1,h2,h3,h4{
   background-color: var(--BLACK);
   color: var(--MAIN_ACCENT);
 }
+textarea::-webkit-scrollbar{
+  background-color: transparent;
+  width: 0.25rem;
+}
+textarea::-webkit-scrollbar-thumb{
+  background-color: var(--COLORFULL_YELLOW);
+}
 main {
   position: relative;
 }
@@ -821,18 +828,7 @@ nav {
   background-color: var(--BG_SHADE_LIGHTER);
   border-radius: 10px;
 }
-.appended-inputs{
-  width: 95%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.appended-inputs .input-group{
-  width:auto;
-  flex: auto;
-}
+
 .input-group{
   position: relative;
   width: 95%;
@@ -844,21 +840,27 @@ nav {
   margin-bottom: 1rem;
   text-align: center;
 }
-textarea::-webkit-scrollbar{
-  background-color: transparent;
-  width: 0.25rem;
+.input-group-append{
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-textarea::-webkit-scrollbar-thumb{
-  background-color: var(--COLORFULL_YELLOW);
+.input-group-append .input-group{
+  width:auto;
+  flex: auto;
 }
-.input-group input, .input-group textarea{
+.input-field{
   position: relative;
   width: 100%;
   height: auto;
-  border: none;
   flex-grow: auto;
   border-radius: 6px;
   background-color: var(--LIGHT_BLACK);
+  border: 1px solid var(--LIGHT_BLACK);
+  outline: none;
   color: var(--WHITE);
   font-family: inherit;
   font-size: large;
@@ -866,44 +868,34 @@ textarea::-webkit-scrollbar-thumb{
   transition: all ease 300ms;
 }
 .input-group textarea{
-  height: 5rem !important;
+  height: 10rem !important;
   width: 100% !important;
   resize: none;
 }
-/* .input-group label{
-  display: none;
-} */
-.input-group input:hover, .input-group textarea:hover{
-  filter: brightness(0.9);
+.input-field:hover{
+  border: 1px solid var(--MAIN_ACCENT);
 }
-.input-group input::placeholder, .input-group textarea::placeholder{
+.input-field:focus{
+  border: 1px solid var(--MAIN_ACCENT);
+}
+.input-field::placeholder{
   color: var(--COLORFULL_PURPLE);
   font-weight:lighter;
   opacity: 0.75;
+  transition: all ease 300ms;
 }
-.input-field:focus{
-  outline: 1px solid var(--MAIN_ACCENT);
-}
-.input-field:focus + .input-label{
-  color: var(--MAIN_ACCENT) !important;
-}
-.input-group input:focus::placeholder, .input-group textarea:focus::placeholder{
-  color: var(--MAIN_ACCENT);
-  font-weight:lighter;
-  opacity: 0.75;
+.input-field:focus::placeholder{
+  opacity: 0;
 }
 
-.input-group-append{
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
+.input-label{
+  transform: translateY(50%);
+  opacity: 0;
+  visibility: hidden;
+  color: var(--WHITE);
+  transition: all ease 300ms;
 }
+
 #modal-send-msg-btn{
   display: flex;
   align-items: center;
