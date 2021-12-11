@@ -3,7 +3,7 @@
 :root {
   --BG_SHADE_LIGHTER: #201d3a;
   --BG_SHADE_DARKER: #191634;
-  --MODAL_BG_TRANSPARENT:rgb(27, 27, 27,0.5);
+  --MODAL_BG_TRANSPARENT: rgb(27, 27, 27, 0.5);
   --MAIN_ACCENT: #08d565;
   --WHITE: #ffffff;
   --BLACK: #000000;
@@ -11,8 +11,8 @@
   --COLORFULL_PINK: #f83097;
   --COLORFULL_YELLOW: #e97518;
   --COLORFULL_PURPLE: #6718e9;
-  --TEXT_SUCCESS:hsl(141, 71%, 48%);
-  --TEXT_DANGER:hsl(348, 100%, 61%);
+  --TEXT_SUCCESS: hsl(141, 71%, 48%);
+  --TEXT_DANGER: hsl(348, 100%, 61%);
   --delay: 100ms;
   --MAIN_FONT: "Montserrat", sans-serif;
 }
@@ -59,7 +59,10 @@ a {
   text-decoration: none;
   color: unset;
 }
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
   margin-block-start: 0 !important;
   margin-block-end: 0 !important;
 }
@@ -67,17 +70,17 @@ h1,h2,h3,h4{
   background-color: var(--BLACK);
   color: var(--MAIN_ACCENT);
 }
-textarea::-webkit-scrollbar{
+textarea::-webkit-scrollbar {
   background-color: transparent;
   width: 0.25rem;
 }
-textarea::-webkit-scrollbar-thumb{
+textarea::-webkit-scrollbar-thumb {
   background-color: var(--COLORFULL_YELLOW);
 }
 main {
   position: relative;
 }
-ion-icon{
+ion-icon {
   pointer-events: none;
 }
 .container {
@@ -131,7 +134,7 @@ ion-icon{
   display: inline-block;
   width: 50px;
   height: 50px;
-  border: 4px solid rgba(255,255,255,.3);
+  border: 4px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   border-top-color: var(--MAIN_ACCENT);
   animation: spin 1s ease-in-out infinite;
@@ -141,7 +144,7 @@ ion-icon{
   display: inline-block;
   width: 30px;
   height: 30px;
-  border: 4px solid rgba(255,255,255,.3);
+  border: 4px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   border-top-color: var(--MAIN_ACCENT);
   animation: spin 1s ease-in-out infinite;
@@ -151,7 +154,7 @@ ion-icon{
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 4px solid rgba(255,255,255,.3);
+  border: 4px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   border-top-color: var(--MAIN_ACCENT);
   animation: spin 1s ease-in-out infinite;
@@ -159,17 +162,20 @@ ion-icon{
 }
 
 @keyframes spin {
-  to { -webkit-transform: rotate(360deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
 @-webkit-keyframes spin {
-  to { -webkit-transform: rotate(360deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 /* spinner styles end */
 
- /* modal styles start  */
-.modal
-{
+/* modal styles start  */
+.modal {
   position: relative;
   display: none;
   justify-content: center;
@@ -183,14 +189,13 @@ ion-icon{
   background-color: var(--MODAL_BG_TRANSPARENT);
   backdrop-filter: blur(10px);
 }
-.modal::-webkit-scrollbar{
+.modal::-webkit-scrollbar {
   display: none;
 }
-.modal.active{
+.modal.active {
   display: flex;
 }
-.modal-content
-{
+.modal-content {
   position: relative;
   background-color: var(--BG_SHADE_DARKER);
   padding: 1rem;
@@ -199,34 +204,42 @@ ion-icon{
   width: 60%;
   border-radius: 5px;
   border: 2px solid var(--BG_SHADE_LIGHTER);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation: modalAppear 0.5s ease;
 }
-@-webkit-keyframes modalAppear
-{
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
+@-webkit-keyframes modalAppear {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
-@keyframes modalAppear
-{
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
+@keyframes modalAppear {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
-.modal-header
-{
+.modal-header {
   position: relative;
   border-bottom: 1.5px solid var(--COLORFULL_YELLOW);
   padding-bottom: 1rem;
   color: var(--MAIN_ACCENT);
 }
-.modal-header h2{
+.modal-header h2 {
   display: flex;
   align-items: center;
   font-size: 2em;
 }
-.modal-close-btn
-{
+.modal-close-btn {
   height: 2.25rem;
   width: 2.25rem;
   display: flex;
@@ -244,52 +257,49 @@ ion-icon{
   z-index: 9999;
   transition: all ease 300ms;
 }
-.modal-close-btn:hover
-{
+.modal-close-btn:hover {
   background-color: var(--TEXT_DANGER);
   color: var(--WHITE);
   transform: scale(1.125);
 }
-.modal-close-btn > ion-icon{
+.modal-close-btn > ion-icon {
   transform: rotateY(0) rotateX(0) scale(1.25);
   transition: all ease 300ms;
 }
-.modal-close-btn:hover > ion-icon{
+.modal-close-btn:hover > ion-icon {
   transform: rotateY(180deg) rotateX(180deg) scale(1.5);
 }
-.modal-header.to-be-closed{
+.modal-header.to-be-closed {
   opacity: 0.5;
   filter: blur(2px);
 }
-.modal-body.to-be-closed{
+.modal-body.to-be-closed {
   opacity: 0.5;
   filter: blur(2px);
 }
-.modal-body
-{
+.modal-body {
   height: 60vh;
   overflow-y: scroll;
   overflow-x: hidden;
   color: var(--WHITE);
   padding: 0.75rem;
 }
-.modal-body::-webkit-scrollbar{
+.modal-body::-webkit-scrollbar {
   background-color: transparent;
   width: 5px;
 }
-.modal-body::-webkit-scrollbar-thumb{
+.modal-body::-webkit-scrollbar-thumb {
   background-color: var(--BG_SHADE_LIGHTER);
   border-radius: 10px;
 }
-.modal-footer
-{
+.modal-footer {
   position: relative;
   height: fit-content;
   width: 100%;
   background-color: #5cb85c !important;
   color: white;
 }
- /* modal styles end  */
+/* modal styles end  */
 
 .main-navigation {
   position: fixed;
@@ -344,26 +354,41 @@ nav {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 2rem;
-  padding: 1.5rem;
-  background: var(--BG_SHADE_LIGHTER);
+  padding:1.5rem; 
+  background: url("../img/blob-navbar.svg") no-repeat center center;
+  background-color: var(--BG_SHADE_LIGHTER);
+  background-size: auto;
+  background-position: center;
   border-radius: 24px;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
   transform: translateX(1000%);
   transition: all 300ms ease;
 }
-.navbar::before {
+/* .navbar::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/blob-navbar.svg") no-repeat center center;
-  background-position: fixed;
-  background-size: cover;
+  background: url("../img/blob-navbar.svg") center center;
+  background-repeat: repeat-y !important;
+  background-size: auto;
   opacity: 0.25;
   z-index: -1;
   transition: all ease 300ms;
+} */
+.navbar-title {
+  width: 100%;
+  font-size: x-large;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+  color: var(--MAIN_ACCENT);
+  z-index: 9999;
 }
 .navbar::-webkit-scrollbar {
   display: none;
@@ -383,8 +408,8 @@ nav {
     display: none;
   }
 }
-@media (max-width:768px){
-  .modal-content{
+@media (max-width: 768px) {
+  .modal-content {
     width: 80vw;
   }
 }
@@ -592,7 +617,7 @@ nav {
   font-size: x-large;
   transition: all ease 300ms;
 }
-.get-in-touch-btn::before{
+.get-in-touch-btn::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -605,16 +630,16 @@ nav {
   z-index: -1;
   transition: all ease 300ms;
 }
-.get-in-touch-btn:hover{
+.get-in-touch-btn:hover {
   background-color: unset;
   border: unset;
 }
-.get-in-touch-btn span{
+.get-in-touch-btn span {
   position: relative;
   margin-bottom: 0.5rem;
   transition: all ease 300ms;
 }
-.get-in-touch-btn span::before{
+.get-in-touch-btn span::before {
   content: "";
   position: absolute;
   bottom: -0.25rem;
@@ -626,14 +651,13 @@ nav {
   border-radius: 6px;
   z-index: -1;
   transition: all ease 300ms;
-
 }
-.get-in-touch-btn span:hover::before{
+.get-in-touch-btn span:hover::before {
   width: 75%;
   transition-delay: 300ms;
 }
 
-.get-in-touch-btn:hover::before{
+.get-in-touch-btn:hover::before {
   width: 100%;
   height: 100%;
   border: 1.5px solid var(--WHITE);
@@ -661,7 +685,7 @@ nav {
     transform: rotate(-45deg);
   }
 }
-.name-span-div{
+.name-span-div {
   margin-bottom: 1rem;
 }
 .name-span {
@@ -703,15 +727,15 @@ nav {
   margin-top: 1rem;
   min-height: 30vh;
 }
-.floating-skills .header{
-  position:relative;
+.floating-skills .header {
+  position: relative;
 }
-.floating-skills .header::before{
+.floating-skills .header::before {
   content: "";
   position: absolute;
   bottom: -0.5rem;
   left: 50%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   width: 75%;
   height: 0.25rem;
   border-radius: 3px;
@@ -756,21 +780,20 @@ nav {
 .floating-icons:hover > img {
   transform: scale(1.2);
 }
-.socials{
+.socials {
   text-align: center;
   padding: 1.5rem 0 0.5rem 0;
   background-color: var(--BG_SHADE_LIGHTER);
   border-radius: 10px;
-  margin:1.5rem 0;
+  margin: 1.5rem 0;
 }
-.get-in-touch-modal-sub-heading
-{
+.get-in-touch-modal-sub-heading {
   color: var(--COLORFULL_YELLOW);
   font-size: large;
-  margin-bottom:1.5rem;
+  margin-bottom: 1.5rem;
   margin-top: 0;
 }
-.social-links{
+.social-links {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -779,13 +802,13 @@ nav {
   margin-bottom: 2rem;
   margin-top: 1.5rem;
 }
-.social-links a{
+.social-links a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.social-links-name{
+.social-links-name {
   transform: translateY(-30%);
   opacity: 0;
   visibility: hidden;
@@ -794,33 +817,33 @@ nav {
   color: var(--WHITE) !important;
   transition: all ease 300ms;
 }
-.social-links a:hover .social-links-name{
+.social-links a:hover .social-links-name {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
-.social-links a{
+.social-links a {
   font-size: larger;
   color: var(--WHITE);
   transition: all ease 300ms;
 }
-.social-links a:hover{
+.social-links a:hover {
   color: var(--COLORFULL_PINK);
 }
-.or-section{
+.or-section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
   margin: 1rem 0.5rem;
-  color:var(--WHITE);
+  color: var(--WHITE);
   opacity: 0.5;
 }
-.or-section hr{
+.or-section hr {
   width: 100%;
   border-radius: 5px;
 }
-#get-in-touch-form{
+#get-in-touch-form {
   position: relative;
   width: 100%;
   height: auto;
@@ -833,7 +856,7 @@ nav {
   border-radius: 10px;
 }
 
-.input-group{
+.input-group {
   position: relative;
   width: 95%;
   display: flex;
@@ -844,7 +867,7 @@ nav {
   margin-bottom: 0.75rem;
   text-align: center;
 }
-.input-group-append{
+.input-group-append {
   width: 95%;
   display: flex;
   align-items: center;
@@ -853,12 +876,12 @@ nav {
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
-.input-group-append .input-group{
-  width:auto;
+.input-group-append .input-group {
+  width: auto;
   flex: auto;
   margin-bottom: 0;
 }
-.input-field{
+.input-field {
   position: relative;
   width: 100%;
   height: auto;
@@ -873,28 +896,28 @@ nav {
   padding: 0.5rem 1rem;
   transition: all ease 300ms;
 }
-.input-group textarea{
+.input-group textarea {
   height: 10rem !important;
   width: 100% !important;
   resize: none;
 }
-.input-field:hover{
+.input-field:hover {
   border: 1px solid var(--MAIN_ACCENT);
 }
-.input-field:focus{
+.input-field:focus {
   border: 1px solid var(--MAIN_ACCENT);
 }
-.input-field::placeholder{
+.input-field::placeholder {
   color: var(--COLORFULL_PURPLE);
-  font-weight:lighter;
+  font-weight: lighter;
   opacity: 0.75;
   transition: all ease 300ms;
 }
-.input-field:focus::placeholder{
+.input-field:focus::placeholder {
   opacity: 0;
 }
 
-.input-label{
+.input-label {
   transform: translateY(50%);
   opacity: 0;
   visibility: hidden;
@@ -902,7 +925,7 @@ nav {
   transition: all ease 300ms;
 }
 
-#modal-send-msg-btn{
+#modal-send-msg-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -917,13 +940,14 @@ nav {
   transition: all ease 300ms;
 }
 
-#modal-send-msg-btn:hover, #modal-send-msg-btn:focus-visible{
+#modal-send-msg-btn:hover,
+#modal-send-msg-btn:focus-visible {
   background-color: var(--MAIN_ACCENT);
   border: 2px solid var(--WHITE);
 }
-#modal-send-msg-btn ion-icon{
+#modal-send-msg-btn ion-icon {
   transition: all ease 300ms;
 }
-#modal-send-msg-btn:hover > ion-icon{
+#modal-send-msg-btn:hover > ion-icon {
   transform: translateX(10%);
 }

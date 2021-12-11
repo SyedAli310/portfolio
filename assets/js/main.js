@@ -54,17 +54,22 @@ $(document).ready(() => {   //<-start of document ready->//
 
   //close navigation-menu on clicking outside of navigation-menu
   $("body").on("click", (e) => {
+    console.log(e.target);
     if (
       $(".navbar").hasClass("is-open") &&
       !$(e.target).hasClass("navbar") &&
       !$(e.target).hasClass("mobile-nav-toggle") &&
-      !$(e.target).hasClass("hamburger")
+      !$(e.target).hasClass("hamburger") &&
+      !$(e.target).hasClass("nav-links") &&
+      !$(e.target).hasClass("nav-anchor-links")
     ) {
+      console.log('clicked');
       // animate button
       $("#mobile-nav-toggle").removeClass("open");
       // toggle navigation
       $(".navbar").removeClass("is-open");
     } else {
+      console.log('not clicked');
       return;
     }
   });
