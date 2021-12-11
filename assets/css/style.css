@@ -252,7 +252,7 @@ ion-icon {
   color: var(--TEXT_DANGER);
   outline: none;
   border: 1.5px solid var(--WHITE);
-  font-size: x-large !important;
+  font-size: x-large ;
   border-radius: 100%;
   z-index: 9999;
   transition: all ease 300ms;
@@ -263,11 +263,10 @@ ion-icon {
   transform: scale(1.125);
 }
 .modal-close-btn > ion-icon {
-  transform: rotateY(0) rotateX(0) scale(1.25);
   transition: all ease 300ms;
 }
 .modal-close-btn:hover > ion-icon {
-  transform: rotateY(180deg) rotateX(180deg) scale(1.5);
+  transform: rotateX(180deg);
 }
 .modal-header.to-be-closed {
   opacity: 0.5;
