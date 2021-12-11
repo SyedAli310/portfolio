@@ -2,6 +2,7 @@ $(document).ready(function () {
   const animatedHero = document.querySelector("#animated-text-hero");
   const hiSpan = document.querySelector("#animated-text-hero .hi-span");
   const getInTouchFormInpFields = document.querySelectorAll('.modal .input-field');
+  const smallSpinner = `<span id='spinner-sm'></span>`
   animatedHero.style.animation = "appear-from-middle ease 1s forwards";
   hiSpan.style.animation =
     "slide-in-left 2s ease 1s forwards, gradient-animation 3s backwards infinite";
@@ -30,6 +31,7 @@ $(document).ready(function () {
 
   $('#get-in-touch-form').on('submit',(e)=>{
     e.preventDefault();
+    $('#modal-send-msg-btn').html(`${smallSpinner}&nbsp;Sending`);
     const name = $('#name').val();
     const email = $('#email').val();
     const message = $('#message').val();
@@ -39,6 +41,13 @@ $(document).ready(function () {
       $('#name').val('');
       $('#email').val('');
       $('#message').val('');
+      setTimeout(()=>{
+        $('#form-res-span').html('<h5 style="color:var(--TEXT_SUCCESS);">Thank you for contacting me</h5>');
+        $('#modal-send-msg-btn').html(`
+            <span>Send</span>
+            <ion-icon name="send-outline"></ion-icon>
+        `);
+      },3500)
     }
   });
 
