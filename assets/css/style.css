@@ -70,6 +70,9 @@ h1,h2,h3,h4{
 main {
   position: relative;
 }
+ion-icon{
+  pointer-events: none;
+}
 .container {
   position: relative;
   width: 100%;
@@ -203,10 +206,8 @@ main {
 .modal-header
 {
   position: relative;
-  margin-bottom: 1rem;
   border-bottom: 1.5px solid var(--COLORFULL_YELLOW);
   padding-bottom: 1rem;
-  /* background-color: var(--BG_SHADE_DARKER); */
   color: var(--MAIN_ACCENT);
 }
 .modal-header h2{
@@ -239,7 +240,7 @@ main {
   transform: scale(1.125);
 }
 .modal-close-btn > ion-icon{
-  transition: all ease 500ms;
+  transition: all ease 300ms;
 }
 .modal-close-btn:hover > ion-icon{
   transform: rotateY(180deg) rotateX(180deg) rotateZ(90deg) scale(1.5);
@@ -258,11 +259,11 @@ main {
   overflow-y: scroll;
   overflow-x: hidden;
   color: var(--WHITE);
-  padding: 1rem;
+  padding: 0.75rem;
 }
 .modal-body::-webkit-scrollbar{
   background-color: transparent;
-  width: 10px;
+  width: 5px;
 }
 .modal-body::-webkit-scrollbar-thumb{
   background-color: var(--BG_SHADE_LIGHTER);
@@ -756,14 +757,35 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
 }
-.social-links ion-icon{
+.social-links a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.social-links-name{
+  transform: translateY(-30%);
+  opacity: 0;
+  visibility: hidden;
+  font-size: small;
+  margin-bottom: 0.5rem;
+  color: var(--WHITE) !important;
+  transition: all ease 300ms;
+}
+.social-links a:hover .social-links-name{
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+.social-links a{
   font-size: larger;
   color: var(--WHITE);
   transition: all ease 300ms;
 }
-.social-links ion-icon:hover{
+.social-links a:hover{
   color: var(--COLORFULL_PINK);
 }
 .or-section{
@@ -787,7 +809,7 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 0;
+  padding: 2rem 0;
   background-color: var(--BG_SHADE_LIGHTER);
   border-radius: 10px;
 }
@@ -807,7 +829,7 @@ nav {
 }
 .input-group input, .input-group textarea{
   position: relative;
-  width: max-content;
+  width: 95%;
   height: auto;
   border: none;
   border-radius: 6px;
@@ -822,6 +844,9 @@ nav {
   width: auto;
   resize: none;
 }
+/* .input-group label{
+  display: none;
+} */
 .input-group input:hover, .input-group textarea:hover{
   filter: brightness(0.9);
 }
