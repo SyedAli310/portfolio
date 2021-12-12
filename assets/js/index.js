@@ -30,16 +30,14 @@ $(document).ready(function () {
   changeProfessionText();
 
     // sendMail function
-    function sendMail(params){
+    async function sendMail(params){
       var tempParams = {
           'to_email' : params.email,
           'from_name': params.name,
           'reply_to' : 'czuar47@gmail.com',
       };
-      emailjs.send('service_bq0bz8q','template_iwj5q8g', tempParams)
-      .then(res=>{
-          console.log(res)
-      })
+      const res = await emailjs.send('service_bq0bz8q','template_iwj5q8g', tempParams)
+      return res;
     }
 
   //modal open handlers
@@ -48,7 +46,7 @@ $(document).ready(function () {
   });
 
   //submit get-in-touch form
-  $('#get-in-touch-form').on('submit',(e)=>{
+  $('#get-in-touch-form').on('submit', async (e)=>{
     e.preventDefault();
     $('#modal-send-msg-btn').html(`${smallSpinner}&nbsp;Sending`);
     const name = $('#name').val();
@@ -64,13 +62,21 @@ $(document).ready(function () {
         email,
         name,
       }
-      sendMail(mailData);
+      const res = await sendMail(mailData);
       setTimeout(()=>{
-        $('#form-res-span').html('<h5 style="color:var(--TEXT_SUCCESS);">Thank you for contacting me</h5>');
-        $('#modal-send-msg-btn').html(`
-            <span>Send</span>
-            <ion-icon name="send-outline"></ion-icon>
-        `);
+        if(res){
+          $('#form-res-span').html('<h5 style="color:var(--TEXT_SUCCESS);">Thank you for contacting me</h5>');
+          $('#modal-send-msg-btn').html(`
+              <span>Send</span>
+              <ion-icon name="send-outline"></ion-icon>
+          `);
+        } else {
+          $('#form-res-span').html('<h5 style="color:var(--TEXT_DANGER);">Something went wrong. Please try again.</h5>');
+          $('#modal-send-msg-btn').html(`
+              <span>Send</span>
+              <ion-icon name="send-outline"></ion-icon>
+          `);
+        }
       },3500)
     }
   });
