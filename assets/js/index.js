@@ -5,7 +5,7 @@ $(document).ready(function () {
   const smallSpinner = `<span id='spinner-sm'></span>`
   animatedHero.style.animation = "appear-from-middle ease 1s forwards";
   hiSpan.style.animation =
-    "slide-in-left 2s ease 1s forwards, gradient-animation 3s backwards infinite";
+    "slide-in-left 1s ease 1s forwards, gradient-animation 3s backwards infinite";
   function changeProfessionText() {
     const professionText = document.querySelector(".profession-span");
     const professionTextArray = [
@@ -33,7 +33,7 @@ $(document).ready(function () {
   $(".get-in-touch-btn").on("click", (e) => {
     $(".get-in-touch-modal").addClass("active");
   });
-  
+
   //submit get-in-touch form
   $('#get-in-touch-form').on('submit',(e)=>{
     e.preventDefault();

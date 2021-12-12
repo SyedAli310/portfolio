@@ -73,7 +73,7 @@ $(document).ready(() => {   //<-start of document ready->//
   });
 
   //adding animation to section-heading
-  $(".section-heading").css('animation','appear-from-left 0.5s ease-in-out forwards');
+  $(".section-heading").css('animation','appear-from-left 0.5s ease forwards');
 
 //<-end of document ready->//
 });
