@@ -63,8 +63,8 @@ h1,
 h2,
 h3,
 h4 {
-  margin-block-start: 0 !important;
-  margin-block-end: 0 !important;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 ::selection {
   background-color: var(--BLACK);
@@ -252,7 +252,7 @@ ion-icon {
   color: var(--TEXT_DANGER);
   outline: none;
   border: 1.5px solid var(--WHITE);
-  font-size: x-large ;
+  font-size: x-large;
   border-radius: 100%;
   z-index: 9999;
   transition: all ease 300ms;
@@ -353,7 +353,7 @@ nav {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 2rem;
-  padding:1.5rem; 
+  padding: 1.5rem;
   /* background: url("../img/blob-navbar.svg") no-repeat center center; */
   background-color: var(--BG_SHADE_LIGHTER);
   /* background-size: auto;
@@ -749,8 +749,8 @@ nav {
   flex-direction: column;
   align-items: center;
   border-radius: 6px;
-  transform: translateY(-20%);
   margin-bottom: 2rem;
+  transform: translateY(-20%);
   opacity: 0;
   transition: all ease 300ms;
 }
@@ -950,3 +950,93 @@ nav {
 #modal-send-msg-btn:hover > ion-icon {
   transform: translateX(10%);
 }
+
+/* project styles start  */
+
+.projects-categories {
+  color: var(--COLORFULL_PINK);
+  margin: 1rem 0;
+  text-align: center;
+}
+.projects-categories-title {
+  color: var(--WHITE);
+  margin: 0.75rem 0;
+}
+.vertical-sep-line {
+  color: var(--WHITE);
+  margin: 0 0.25rem;
+}
+.projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: var(--BG_SHADE_DARKER);
+  border-radius: 10px;
+  padding: 1.25rem 0;
+  transition: all ease 300ms;
+}
+
+.projects-container .project-card {
+  position: relative;
+  width: auto;
+  outline: 1px solid var(--COLORFULL_YELLOW);
+  border-radius: 9px;
+  color: var(--WHITE);
+  transform: translateY(-20%);
+  opacity: 0;
+  overflow: hidden;
+  transition: all ease 300ms;
+}
+@media (max-width: 768px) {
+  .projects-container .project-card {
+    flex: auto;
+  }
+}
+.project-card .project-card-image {
+  width: 100%;
+}
+.project-card .project-card-image img {
+  width: 100%;
+  height: auto;
+  opacity: 0.25;
+  transition: all ease 300ms;
+}
+.project-card:hover .project-card-image img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.project-card-content {
+  padding: 1rem;
+  width: auto;
+  transition: all ease 300ms;
+}
+
+.project-card-content .project-card-header {
+  font-size: large;
+  font-weight: bold;
+  color: var(--COLORFULL_YELLOW);
+  margin: 0.5rem 0;
+}
+.project-card-content .project-card-body {
+  font-size: small;
+  color: var(--WHITE);
+  font-weight: lighter;
+  margin: 0.5rem 0;
+}
+.project-card-content .project-card-body button {
+  color: var(--COLORFULL_YELLOW);
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid var(--COLORFULL_YELLOW);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  transition: all ease 300ms;
+}
+
+/* project styles end  */

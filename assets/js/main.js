@@ -54,7 +54,7 @@ $(document).ready(() => {   //<-start of document ready->//
 
   //close navigation-menu on clicking outside of navigation-menu
   $("body").on("click", (e) => {
-    console.log(e.target);
+    // console.log(e.target);
     if (
       $(".navbar").hasClass("is-open") &&
       !$(e.target).hasClass("navbar") &&
@@ -63,13 +63,13 @@ $(document).ready(() => {   //<-start of document ready->//
       !$(e.target).hasClass("nav-links") &&
       !$(e.target).hasClass("nav-anchor-links")
     ) {
-      console.log('clicked');
+      // console.log('clicked');
       // animate button
       $("#mobile-nav-toggle").removeClass("open");
       // toggle navigation
       $(".navbar").removeClass("is-open");
     } else {
-      console.log('not clicked');
+      // console.log('not clicked');
       return;
     }
   });
