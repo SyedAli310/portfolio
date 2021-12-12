@@ -29,6 +29,19 @@ $(document).ready(function () {
   }
   changeProfessionText();
 
+    // sendMail function
+    function sendMail(params){
+      var tempParams = {
+          'to_email' : params.email,
+          'from_name': params.name,
+          'reply_to' : 'czuar47@gmail.com',
+      };
+      emailjs.send('service_bq0bz8q','template_iwj5q8g', tempParams)
+      .then(res=>{
+          console.log(res)
+      })
+    }
+
   //modal open handlers
   $(".get-in-touch-btn").on("click", (e) => {
     $(".get-in-touch-modal").addClass("active");
@@ -47,6 +60,11 @@ $(document).ready(function () {
       $('#name').val('');
       $('#email').val('');
       $('#message').val('');
+      const mailData = {
+        email,
+        name,
+      }
+      sendMail(mailData);
       setTimeout(()=>{
         $('#form-res-span').html('<h5 style="color:var(--TEXT_SUCCESS);">Thank you for contacting me</h5>');
         $('#modal-send-msg-btn').html(`
