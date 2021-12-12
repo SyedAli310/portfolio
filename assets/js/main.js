@@ -22,9 +22,7 @@ $(document).ready(() => {   //<-start of document ready->//
   $(document).on("scroll", checkScroll);
 
   // modal open/close handlers
-  $(".get-in-touch-btn").on("click", (e) => {
-    $(".get-in-touch-modal").addClass("active");
-  });
+
   $(".open-modal-btn").on("click", (e) => {
     $(".modal").addClass("active");
   });

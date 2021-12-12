@@ -952,11 +952,26 @@ nav {
 }
 
 /* project styles start  */
+ .pending-implementation{  /* generic class */
+  color: var(--COLORFULL_PINK);
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+ .pending-implementation ion-icon{  /* generic class */
+  color: var(--WHITE);
+  opacity: 0.5;
+  font-size: large;
+}
 
-.projects-categories {
+.projects-categories-filters {
   color: var(--COLORFULL_PINK);
   margin: 1rem 0;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap; */
 }
 .projects-categories-title {
   color: var(--WHITE);
@@ -992,9 +1007,15 @@ nav {
   transition: all ease 300ms;
 }
 @media (max-width: 768px) {
+  .projects-categories-filters{
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
   .projects-container .project-card {
     flex: auto;
   }
+
 }
 .project-card .project-card-image {
   width: 100%;

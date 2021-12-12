@@ -29,6 +29,11 @@ $(document).ready(function () {
   }
   changeProfessionText();
 
+  //modal open handlers
+  $(".get-in-touch-btn").on("click", (e) => {
+    $(".get-in-touch-modal").addClass("active");
+  });
+  
   //submit get-in-touch form
   $('#get-in-touch-form').on('submit',(e)=>{
     e.preventDefault();

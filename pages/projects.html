@@ -49,15 +49,18 @@
           Projects I have <span style="color: var(--MAIN_ACCENT)">Built</span>.
         </h1>
 
-        <div class="projects-categories">
-            <h3 class="projects-categories-title">
-                Categories
-            </h3>
-          <span>HTML CSS JavaScript</span>
-          <span class="vertical-sep-line">&VerticalLine;</span>
-          <span>Node.js</span>
-          <span class="vertical-sep-line">&VerticalLine;</span>
-          <span>django</span>
+        <div class="projects-categories-filters">
+          <div class="projects-categories">
+            <h3 class="projects-categories-title">Categories</h3>
+            <span>HTML CSS JavaScript</span>
+            <span class="vertical-sep-line">&VerticalLine;</span>
+            <span>Node.js</span>
+            <span class="vertical-sep-line">&VerticalLine;</span>
+            <span>django</span>
+          </div>
+          <div class="projects-filters">
+              <button class="btn filters-btn"><ion-icon name="filter-outline"></ion-icon>&nbsp;Filters / Sort</button>
+          </div>
         </div>
         <div class="projects-container">
           <div class="project-card">
@@ -241,6 +244,35 @@
         </div>
       </div>
     </main>
+
+    <div class="modal filters-modal">
+        <div class="modal-content">
+          <button class="modal-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+          <div class="modal-header">
+            <h2>Project Filters</h2>
+          </div>
+          <div class="modal-body">
+            <h2>Apply Filters</h2>
+            <p class='pending-implementation'><ion-icon name="construct-outline"></ion-icon>/- to be implemented-/</p>
+            <div class="or-section">
+              <hr />
+              <span>or</span>
+              <hr />
+            </div>
+            <h2>Sort projects</h2>
+            <p class='pending-implementation'><ion-icon name="construct-outline"></ion-icon>/- to be implemented-/</p>
+
+          </div>
+          <!-- <div class="modal-footer">
+            <button class="modal-close-btn">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div> -->
+        </div>
+      </div>
+  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
