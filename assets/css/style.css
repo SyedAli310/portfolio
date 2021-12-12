@@ -97,9 +97,18 @@ ion-icon {
   font-size: 2rem;
   font-weight: 700;
   color: var(--COLORFULL_YELLOW);
+  transform: translateX(-100%);
+  opacity: 0;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
+@keyframes appear-from-left {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .btn {
   background-color: var(--BG_SHADE_LIGHTER);
   outline: none;
