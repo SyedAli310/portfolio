@@ -1113,8 +1113,6 @@ nav {
 
 
 .about-me-section{
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1142,7 +1140,6 @@ nav {
   background-position: center;
 }
 .about-me-section .about-me-section-right{
-  width: 100%;
   /* background-color: var(--COLORFULL_YELLOW); */
   line-height: 2.5;
   padding: 0.125rem 2rem;
