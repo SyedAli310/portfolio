@@ -1037,7 +1037,7 @@ nav {
   outline: 2px solid var(--COLORFULL_YELLOW);
   border-radius: 9px;
   color: var(--WHITE);
-  transform: translateY(-20%) rotate(0deg);
+  transform: translateX(-20%) rotate(0deg);
   opacity: 0;
   overflow: hidden;
   box-shadow: 6px 7px 0px var(--COLORFULL_PURPLE);

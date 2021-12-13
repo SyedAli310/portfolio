@@ -3,7 +3,7 @@ $(document).ready(function () {
   const projectCards = document.querySelectorAll(".project-card");
   window.onload = () => {
     projectCards.forEach((card, index) => {
-        card.style.animation = "slide-in-up ease 300ms forwards";
+        card.style.animation = "slide-in-left ease 300ms forwards";
         card.style.animationDelay = `${100 * index}ms`;
     });
   }
