@@ -1109,9 +1109,6 @@ nav {
 
 
 /* about me styles start   */
-
-
-
 .about-me-section{
   display: flex;
   justify-content: center;
@@ -1134,7 +1131,7 @@ nav {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  background-image: url("../../assets/img/me-2.jpg");
+  background-image: url("../../assets/img/me-1.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
