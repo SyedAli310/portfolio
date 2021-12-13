@@ -1121,11 +1121,17 @@ nav {
   /* background-color: var(--BG_SHADE_LIGHTER); */
   margin: 2rem 0;
 }
-.about-me-section .about-me-section-left{
-  height: 100%;
-  /* background-color: var(--COLORFULL_PURPLE); */
+@media (max-width: 768px) {
+  .about-me-section{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-me-section .about-me-section-right{
+    text-align: center;
+  }
+  
 }
-
 .about-me-section .about-me-section-left .img{
   width: 100px;
   height: 100px;
@@ -1136,6 +1142,7 @@ nav {
   background-position: center;
 }
 .about-me-section .about-me-section-right{
+  width: 100%;
   /* background-color: var(--COLORFULL_YELLOW); */
   line-height: 2.5;
   padding: 0.125rem 2rem;

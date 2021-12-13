@@ -12,13 +12,18 @@
   <style>
       .social-links{
         gap: 1rem !important; 
-        justify-content: start !important;
+        justify-content: start;
       }
       .social-links a{
         align-items: start !important;
         opacity: 0;
         transform: translateY(-50%);
         transition: all ease 300ms;
+      }
+      @media (max-width: 768px) {
+        .social-links{
+          justify-content: center;
+        }
       }
   </style>
   <body>
