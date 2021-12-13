@@ -92,13 +92,12 @@ ion-icon {
   box-sizing: border-box;
 }
 .section-heading {
-  margin-block-start: unset;
-  margin-block-end: unset;
   font-size: 2rem;
   font-weight: 700;
   color: var(--COLORFULL_YELLOW);
   transform: translateX(-100%);
   opacity: 0;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
@@ -762,6 +761,10 @@ nav {
   transform: translateY(-20%);
   opacity: 0;
   transition: all ease 300ms;
+}
+.floating-icons img{
+  height: 3.5rem;
+  width: 3.5rem;
 }
 
 @keyframes slide-in-up {
