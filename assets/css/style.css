@@ -1007,13 +1007,17 @@ nav {
 .projects-container .project-card {
   position: relative;
   width: auto;
-  outline: 1px solid var(--COLORFULL_YELLOW);
+  outline: 2px solid var(--MAIN_ACCENT);
   border-radius: 9px;
   color: var(--WHITE);
-  transform: translateY(-20%);
+  transform: translateY(-20%) rotate(0deg);
   opacity: 0;
   overflow: hidden;
+  box-shadow: 6px 7px 0px var(--COLORFULL_PURPLE);
   transition: all ease 300ms;
+}
+.projects-container .project-card:hover {
+  box-shadow: -6px -7px 0px var(--COLORFULL_PURPLE);
 }
 @media (max-width: 768px) {
   .projects-categories-filters{
