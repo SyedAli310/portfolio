@@ -31,14 +31,14 @@ $(document).ready(() => {   //<-start of document ready->//
   });
 
   // modal blur on close-btn hover handlers
-  $(".modal-close-btn").on("mouseenter", () => {
-    $(".modal-body").addClass("to-be-closed");
-    $(".modal-header").addClass("to-be-closed");
-  });
-  $(".modal-close-btn").on("mouseleave", () => {
-    $(".modal-body").removeClass("to-be-closed");
-    $(".modal-header").removeClass("to-be-closed");
-  });
+  // $(".modal-close-btn").on("mouseenter", () => {
+  //   $(".modal-body").addClass("to-be-closed");
+  //   $(".modal-header").addClass("to-be-closed");
+  // });
+  // $(".modal-close-btn").on("mouseleave", () => {
+  //   $(".modal-body").removeClass("to-be-closed");
+  //   $(".modal-header").removeClass("to-be-closed");
+  // });
 
   // close modal on clicking outside of modal
   $(".modal").on("click", (e) => {
@@ -74,7 +74,7 @@ $(document).ready(() => {   //<-start of document ready->//
   });
 
   //adding animation to section-heading
-  $(".section-heading").css('animation','appear-from-left 0.5s ease forwards');
+  $(".section-heading").css('animation','appear-from-top 0.5s ease forwards');
 
 //<-end of document ready->//
 });

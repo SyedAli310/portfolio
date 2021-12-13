@@ -95,7 +95,7 @@ ion-icon {
   font-size: 2rem;
   font-weight: 700;
   color: var(--COLORFULL_YELLOW);
-  transform: translateX(-100%);
+  transform: translateY(-100%);
   opacity: 0;
   text-align: center;
   text-transform: uppercase;
@@ -105,6 +105,12 @@ ion-icon {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+@keyframes appear-from-top {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -277,18 +283,22 @@ select:-webkit-autofill:focus {
   font-size: x-large;
   border-radius: 100%;
   z-index: 9999;
+  transform: scale(1.125);
   transition: all ease 300ms;
 }
 .modal-close-btn:hover {
   background-color: var(--TEXT_DANGER);
   color: var(--WHITE);
-  transform: scale(1.125);
+}
+.modal-close-btn:focus {
+  transform: scale(0.95);
+  box-shadow: 0px 0px 5px var(--TEXT_DANGER);
 }
 .modal-close-btn > ion-icon {
   transition: all ease 300ms;
 }
 .modal-close-btn:hover > ion-icon {
-  transform: rotateX(180deg);
+  transform: rotate(180deg);
 }
 .modal-header.to-be-closed {
   opacity: 0.5;
@@ -1098,3 +1108,42 @@ nav {
 /* project styles end  */
 
 
+/* about me styles start   */
+
+
+
+.about-me-section{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* background-color: var(--BG_SHADE_LIGHTER); */
+  margin: 2rem 0;
+}
+.about-me-section .about-me-section-left{
+  height: 100%;
+  /* background-color: var(--COLORFULL_PURPLE); */
+}
+
+.about-me-section .about-me-section-left .img{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-image: url("../../assets/img/me-2.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.about-me-section .about-me-section-right{
+  /* background-color: var(--COLORFULL_YELLOW); */
+  line-height: 2.5;
+  padding: 0.125rem 2rem;
+}
+
+.about-me-section .about-me-section-right p{
+  color: var(--WHITE);
+  margin: 0.5rem 0;
+}
+
+/* about me styles end   */
