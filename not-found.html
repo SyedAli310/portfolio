@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="icon" href="./assets/img/favicon.jpg" type="image/x-icon" />
-    <title>Syed Ali &#8226; Not-Found</title>
+    <title>Syed Ali &#9135;&nbsp; 404</title>
   </head>
   <body>
     <div class="main-navigation">
@@ -122,6 +122,29 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+       // function to check the document scroll location
+  function checkScroll() {
+    if ($(document).scrollTop() > 1) {
+      $(".main-navigation").addClass("scrolled");
+    } else {
+      $(".main-navigation").removeClass("scrolled");
+    }
+  }
+  checkScroll();
+
+  // toggle (open/close) navigation-menu
+  $("#mobile-nav-toggle").on("click", () => {
+    // animate button
+    $("#mobile-nav-toggle").toggleClass("open");
+    // toggle navigation
+    $(".navbar").toggleClass("is-open");
+  });
+
+  // run checkScroll() function whenever window is scrolled
+  $(document).on("scroll", checkScroll);
+
+    </script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
