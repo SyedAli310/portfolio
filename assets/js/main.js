@@ -59,7 +59,8 @@ $(document).ready(() => {   //<-start of document ready->//
       !$(e.target).hasClass("mobile-nav-toggle") &&
       !$(e.target).hasClass("hamburger") &&
       !$(e.target).hasClass("nav-links") &&
-      !$(e.target).hasClass("nav-anchor-links")
+      !$(e.target).hasClass("nav-anchor-links") &&
+      !$(e.target).hasClass("navbar-title") 
     ) {
       // console.log('clicked');
       // animate button

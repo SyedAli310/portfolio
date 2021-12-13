@@ -137,6 +137,21 @@ ion-icon {
 .color-main-accent {
   color: var(--MAIN_ACCENT);
 }
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid var(--MAIN_ACCENT);
+  -webkit-text-fill-color: var(--WHITE);
+  -webkit-box-shadow:unset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 /* spinner style */
 #spinner-lg {
   display: inline-block;
@@ -1010,7 +1025,7 @@ nav {
 .projects-container .project-card {
   position: relative;
   width: auto;
-  outline: 2px solid var(--MAIN_ACCENT);
+  outline: 2px solid var(--COLORFULL_YELLOW);
   border-radius: 9px;
   color: var(--WHITE);
   transform: translateY(-20%) rotate(0deg);
@@ -1082,3 +1097,5 @@ nav {
 }
 
 /* project styles end  */
+
+
