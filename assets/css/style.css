@@ -369,8 +369,9 @@ nav {
 }
 .logo:hover {
   letter-spacing: 5px;
-  line-height: 2;
+  transform: rotate(0);
 }
+
 .navbar {
   position: fixed;
   right: 1rem;
