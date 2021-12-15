@@ -87,7 +87,7 @@ $(document).ready(() => {
 
   // function to change title when un-focusing on tab
   function newTitle() {
-    document.title = "Come back 👋";
+    document.title = `Come back ☹️ | ` + origTitle;
   }
 
   // bind functions to blur and focus events
