@@ -76,5 +76,22 @@ $(document).ready(() => {   //<-start of document ready->//
   //adding animation to section-heading
   $(".section-heading").css('animation','appear-from-top 0.5s ease forwards');
 
+   // store the original tab title
+ var origTitle = document.title;
+
+ // function to change title when focusing on tab
+ function oldTitle() {
+   document.title = origTitle;
+ }
+
+ // function to change title when un-focusing on tab
+ function newTitle() {
+   document.title = 'Come back 👋';
+ }
+
+ // bind functions to blur and focus events
+ window.onblur = newTitle;
+ window.onfocus = oldTitle;
+
 //<-end of document ready->//
 });
