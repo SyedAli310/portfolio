@@ -18,7 +18,7 @@ $(document).ready(() => {   //<-start of document ready->//
     $(".navbar").toggleClass("is-open");
   });
 
-  // run checkScroll() function whenever window is scrolled
+  // run checkScroll() function whenever document is scrolled
   $(document).on("scroll", checkScroll);
 
   // modal open/close handlers
