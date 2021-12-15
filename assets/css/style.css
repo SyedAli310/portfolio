@@ -951,12 +951,14 @@ nav {
   border: 1px solid var(--MAIN_ACCENT);
 }
 .input-field::placeholder {
-  color: var(--COLORFULL_PURPLE);
-  font-weight: lighter;
-  opacity: 0.75;
+  color: var(--WHITE);
+  font-weight: lighter !important;
+  transform: translateY(0);
+  opacity: 0.5;
   transition: all ease 300ms;
 }
 .input-field:focus::placeholder {
+  transform: translateY(-100%);
   opacity: 0;
 }
 
@@ -966,6 +968,7 @@ nav {
   visibility: hidden;
   color: var(--MAIN_ACCENT);
   transition: all ease 300ms;
+  transition-delay: 150ms;
 }
 
 #modal-send-msg-btn {
