@@ -1,5 +1,6 @@
-$(document).ready(() => {   //<-start of document ready->//
-  
+$(document).ready(() => {
+  //<-start of document ready->//
+
   // function to check the document scroll location
   function checkScroll() {
     if ($(document).scrollTop() > 1) {
@@ -60,7 +61,7 @@ $(document).ready(() => {   //<-start of document ready->//
       !$(e.target).hasClass("hamburger") &&
       !$(e.target).hasClass("nav-links") &&
       !$(e.target).hasClass("nav-anchor-links") &&
-      !$(e.target).hasClass("navbar-title") 
+      !$(e.target).hasClass("navbar-title")
     ) {
       // console.log('clicked');
       // animate button
@@ -74,24 +75,24 @@ $(document).ready(() => {   //<-start of document ready->//
   });
 
   //adding animation to section-heading
-  $(".section-heading").css('animation','appear-from-top 0.5s ease forwards');
+  $(".section-heading").css("animation", "appear-from-top 0.5s ease forwards");
 
-   // store the original tab title
- var origTitle = document.title;
+  // store the original tab title
+  var origTitle = document.title;
 
- // function to change title when focusing on tab
- function oldTitle() {
-   document.title = origTitle;
- }
+  // function to change title when focusing on tab
+  function oldTitle() {
+    document.title = origTitle;
+  }
 
- // function to change title when un-focusing on tab
- function newTitle() {
-   document.title = 'Come back 👋';
- }
+  // function to change title when un-focusing on tab
+  function newTitle() {
+    document.title = "Come back 👋";
+  }
 
- // bind functions to blur and focus events
- window.onblur = newTitle;
- window.onfocus = oldTitle;
+  // bind functions to blur and focus events
+  window.onblur = newTitle;
+  window.onfocus = oldTitle;
 
-//<-end of document ready->//
+  //<-end of document ready->//
 });
