@@ -1173,3 +1173,73 @@ nav {
 }
 
 /* about me styles end   */
+
+/* footer styles */
+.footer{
+  font-weight: lighter;
+  text-align: center;
+  border-top: 1px solid var(--COLORFULL_PURPLE);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 2.5rem;
+}
+.footer legend{
+  font-size: larger;
+  color: var(--COLORFULL_YELLOW);
+  padding: 0 0.75rem;
+}
+
+.footer .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer .footer-left{
+  flex: auto;
+  color: var(--WHITE);
+  font-size: small;
+  font-weight: lighter;
+}
+.footer .footer-left .footer-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-align: start;
+}
+.footer .footer-left .footer-links a{
+  position: relative;
+  color: var(--WHITE);
+  text-decoration: none;
+  transition: all ease 300ms;
+}
+.footer .footer-left .footer-links a::before{
+  content: "-";
+  position: absolute;
+  right: 100%;
+  color: var(--WHITE);
+  margin: 0 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%);
+  transition: all ease 300ms;
+}
+.footer .footer-left .footer-links a:hover{
+  color: var(--MAIN_ACCENT);
+}
+.footer .footer-left .footer-links a:hover::before{
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0%);
+}
+.footer .footer-right{
+  flex: auto;
+}
+
+
+
+/* footer styles end */
