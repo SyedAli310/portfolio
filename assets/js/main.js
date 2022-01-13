@@ -31,16 +31,6 @@ $(document).ready(() => {
     $(".modal").toggleClass("active");
   });
 
-  // modal blur on close-btn hover handlers
-  // $(".modal-close-btn").on("mouseenter", () => {
-  //   $(".modal-body").addClass("to-be-closed");
-  //   $(".modal-header").addClass("to-be-closed");
-  // });
-  // $(".modal-close-btn").on("mouseleave", () => {
-  //   $(".modal-body").removeClass("to-be-closed");
-  //   $(".modal-header").removeClass("to-be-closed");
-  // });
-
   // close modal on clicking outside of modal
   $(".modal").on("click", (e) => {
     if (
@@ -93,6 +83,13 @@ $(document).ready(() => {
   // bind functions to blur and focus events
   window.onblur = newTitle;
   window.onfocus = oldTitle;
+
+  function fillFooterYear() {
+    var date = new Date();
+    var year = date.getFullYear();
+    $(".footer-year").text(year);
+  }
+  fillFooterYear();
 
   //<-end of document ready->//
 });
