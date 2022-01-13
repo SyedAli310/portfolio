@@ -80,6 +80,8 @@ textarea::-webkit-scrollbar-thumb {
 }
 main {
   position: relative;
+  min-height: 90vh;
+  margin-top: auto;
 }
 ion-icon {
   pointer-events: none;
