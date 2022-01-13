@@ -77,7 +77,7 @@ $(document).ready(() => {
 
   // function to change title when un-focusing on tab
   function newTitle() {
-    document.title = `Idling💣 | ` + origTitle;
+    document.title = `Idling💤 / ` + ` ${origTitle}`;
   }
 
   // bind functions to blur and focus events
