@@ -1185,7 +1185,7 @@ nav {
 .footer{
   font-weight: lighter;
   text-align: center;
-  border-top: 1px solid var(--COLORFULL_PURPLE);
+  border-top: 1px solid var(--COLORFULL_YELLOW);
   border-bottom: none;
   border-left: none;
   border-right: none;
@@ -1193,7 +1193,7 @@ nav {
 }
 .footer legend{
   font-size: larger;
-  color: var(--COLORFULL_YELLOW);
+  color: var(--WHITE);
   padding: 0 0.75rem;
 }
 
