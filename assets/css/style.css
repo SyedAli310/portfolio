@@ -865,6 +865,8 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: scale(1.25);
+  padding-bottom: 0.5rem;
 }
 .social-links-name {
   transform: translateY(-30%);
@@ -886,6 +888,7 @@ nav {
   transition: all ease 300ms;
 }
 .social-links a:hover {
+  transform: scale(1);
   color: var(--COLORFULL_PINK);
 }
 .or-section {
