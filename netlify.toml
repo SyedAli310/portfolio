@@ -2,3 +2,23 @@
 from = "/*"
 to = "/not-found.html"
 status = 404
+
+[[redirects]]
+from = "/projects"
+to = "/pages/projects"
+force = true
+
+[[redirects]]
+from = "/blog"
+to = "/pages/blog"
+force = true
+
+[[redirects]]
+from = "/skills"
+to = "/pages/skills"
+force = true
+
+[[redirects]]
+from = "/about"
+to = "/pages/about"
+force = true
