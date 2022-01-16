@@ -1198,7 +1198,7 @@ nav {
 /* about me styles end   */
 
 /* footer styles */
-.footer{
+.footer {
   width: 100%;
   font-weight: lighter;
   text-align: center;
@@ -1207,16 +1207,16 @@ nav {
   border-top: 1px solid var(--COLORFULL_PURPLE);
 }
 
-.footer .container{
+.footer .container {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: start;
   flex-wrap: wrap-reverse;
   gap: 2rem;
-  padding:2rem 0rem;
+  padding: 2rem 0rem;
 }
-.footer .footer-left{
+.footer .footer-left {
   display: flex;
   justify-content: flex-start;
   text-align: flex-start;
@@ -1224,32 +1224,32 @@ nav {
   font-size: small;
   font-weight: lighter;
 }
-.footer .footer-middle{
+.footer .footer-middle {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 3rem;
 }
-.footer .footer-right{
+.footer .footer-right {
   display: flex;
   justify-content: flex-end;
 }
-.footer .footer-left .footer-ack h3{
+.footer .footer-left .footer-ack h3 {
   width: max-content;
-  font-family: var(--LOGO_FONT) ;
+  font-family: var(--LOGO_FONT);
   font-size: x-large;
   font-weight: lighter;
   color: var(--COLORFULL_YELLOW);
   margin-bottom: 0.5rem;
   letter-spacing: 1.5px;
 }
-.footer .footer-left .footer-ack h3:hover{
+.footer .footer-left .footer-ack h3:hover {
   color: var(--MAIN_ACCENT);
 }
-.footer .footer-left .footer-ack p{
+.footer .footer-left .footer-ack p {
   text-align: start;
 }
-.footer .footer-links{
+.footer .footer-links {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1258,19 +1258,19 @@ nav {
   gap: 1rem;
   text-align: start;
 }
-.footer .footer-links h3{
+.footer .footer-links h3 {
   font-weight: bold;
   font-size: larger;
   color: var(--COLORFULL_YELLOW);
   border-bottom: 1px solid var(--COLORFULL_PURPLE);
 }
-.footer .footer-links a{
+.footer .footer-links a {
   position: relative;
   color: var(--WHITE);
   text-decoration: none;
   transition: all ease 300ms;
 }
-.footer .footer-links a::before{
+.footer .footer-links a::before {
   content: "-";
   position: absolute;
   right: 100%;
@@ -1281,41 +1281,41 @@ nav {
   transform: translateX(-50%);
   transition: all ease 300ms;
 }
-.footer .footer-links a:hover{
+.footer .footer-links a:hover {
   color: var(--MAIN_ACCENT);
 }
-.footer .footer-links a:hover::before{
+.footer .footer-links a:hover::before {
   opacity: 1;
   visibility: visible;
   transform: translateX(0%);
 }
-.subscribe-footer{
+.subscribe-footer {
   margin-bottom: 1rem;
 }
-.subscribe-footer label{
+.subscribe-footer label {
   color: var(--COLORFULL_YELLOW);
   font-weight: bold;
   font-size: larger;
 }
-.subscribe-footer input{
+.subscribe-footer input {
   border: 1px solid var(--COLORFULL_YELLOW);
 }
 
-.copy-right-footer{
+.copy-right-footer {
   color: var(--WHITE);
   opacity: 0.5;
   padding: 0.5rem 0 !important;
   gap: 0 !important;
 }
-.copy-right-footer #hr{
+.copy-right-footer #hr {
   display: block;
   width: 100%;
   height: 0.5px;
   background-color: var(--WHITE);
   opacity: 0.5;
 }
-@media (max-width:768px){
-  .footer .container{
+@media (max-width: 768px) {
+  .footer .container {
     justify-content: start;
   }
 }
