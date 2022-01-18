@@ -81,6 +81,30 @@ $(document).ready(function () {
     }
   });
 
+  const getGithubStats = async (username) => {
+    const url = `https://api.github.com/users/${username}`;
+    const res = await fetch(url)
+    const data = await res.json();
+    return data;
+  }
+
+  const fillDataFromGithub = async () =>{
+    const data = await getGithubStats('SyedAli310');
+    console.log(data);
+    const avatarImg = document.querySelector('#gh-avatar');
+    const name = document.querySelector('#gh-name');
+    const bio = document.querySelector('#gh-bio');
+    const joined = document.querySelector('#gh-joined');
+    const repos = document.querySelector('#gh-repos');
+    avatarImg.src = data.avatar_url;
+    name.innerHTML = `${data.name} <br> <span style='font-size:smaller; opacity:0.5;'>${data.login}</span>`;
+    bio.innerHTML = `Bio : ${data.bio}`;
+    joined.innerHTML = `Joined : ${new Date(data.created_at).getMonth()}/${new Date(data.created_at).getFullYear()}`;
+    repos.innerHTML = `Repos : ${data.public_repos}`;
+  }
+  fillDataFromGithub()
+
+
   //floating input labels on focus
   getInTouchFormInpFields.forEach((field)=>{
     $(field).on('focus',(e)=>{
