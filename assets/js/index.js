@@ -102,7 +102,7 @@ $(document).ready(function () {
     joined.innerHTML = `<span style='color:grey;'>Joined :</span> ${new Date(data.created_at).getMonth()}/${new Date(data.created_at).getFullYear()}`;
     repos.innerHTML = `<span style='color:grey;'>Repos :</span> ${data.public_repos}`;
   }
-  fillDataFromGithub()
+  window.onload = fillDataFromGithub()
 
 
   //floating input labels on focus
