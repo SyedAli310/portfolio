@@ -584,7 +584,7 @@ nav {
   flex-wrap: wrap;
   transform: translateY(-10%);
   opacity: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 #animated-text-hero::before {
