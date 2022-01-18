@@ -98,9 +98,9 @@ $(document).ready(function () {
     const repos = document.querySelector('#gh-repos');
     avatarImg.src = data.avatar_url;
     name.innerHTML = `${data.name} <br> <span style='font-size:smaller; opacity:0.5;'>${data.login}</span>`;
-    bio.innerHTML = `Bio : ${data.bio}`;
-    joined.innerHTML = `Joined : ${new Date(data.created_at).getMonth()}/${new Date(data.created_at).getFullYear()}`;
-    repos.innerHTML = `Repos : ${data.public_repos}`;
+    bio.innerHTML = `<span style='color:grey;'>Bio :</span> ${data.bio}`;
+    joined.innerHTML = `<span style='color:grey;'>Joined :</span> ${new Date(data.created_at).getMonth()}/${new Date(data.created_at).getFullYear()}`;
+    repos.innerHTML = `<span style='color:grey;'>Repos :</span> ${data.public_repos}`;
   }
   fillDataFromGithub()
 
