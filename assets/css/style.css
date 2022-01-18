@@ -584,6 +584,7 @@ nav {
   flex-wrap: wrap;
   transform: translateY(-10%);
   opacity: 0;
+  margin-bottom: 1.5rem;
 }
 
 #animated-text-hero::before {
@@ -782,6 +783,41 @@ nav {
   opacity: 1;
   width: 65%;
 }
+
+/* github content styles  */
+.github-stats{
+  position: relative;
+  width: auto;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  background-color: #0d1017;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.github-stats::before{
+  content: "GITHUB";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: var(--TEXT_SUCCESS);
+  transition: all ease 300ms;
+}
+.github-user{
+  color: var(--WHITE);
+  font-size: large;
+}
+.github-user #gh-name{
+  margin: 0 !important;
+}
+#gh-avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+/* end of github content styles  */
 
 .floating-skills {
   position: relative;
