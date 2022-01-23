@@ -224,34 +224,67 @@
 /* github content styles  */
 .github-stats {
   position: relative;
-  width: auto;
   display: flex;
+  flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 1rem;
   background-color: #0d1017;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 5px;
 }
 .github-stats::before {
-  content: "GITHUB";
+  content: "GitHub Stats";
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
   color: var(--TEXT_SUCCESS);
   transition: all ease 300ms;
 }
-.github-user {
+.github-stats .github-user{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 2rem;
   color: var(--WHITE);
   font-size: large;
 }
-.github-user #gh-name {
-  margin: 0 !important;
+.github-stats .github-user .user-profile{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
-#gh-avatar {
+.github-stats .github-user .user-profile .gh-avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-bottom: 1rem;
+}
+.github-stats .github-user .user-info{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.github-stats .github-contributions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--LIGHT_BLACK);
+}
+.github-stats .github-contributions h1{
+  color: var(--WHITE);
+}
+.github-stats .github-contributions img{
+  width: 100%;
+  height: auto;
 }
 /* end of github content styles  */
