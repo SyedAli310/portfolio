@@ -2,7 +2,7 @@ $(document).ready(function () {
   const animatedHero = document.querySelector(".animated-text-hero");
   const hiSpan = document.querySelector(".animated-text-hero .hi-span");
   const getInTouchFormInpFields = document.querySelectorAll(
-    ".modal .input-field"
+    ".input-field"
   );
   const smallSpinner = `<span class='spinner-sm'></span>`;
   animatedHero.style.animation = "appear-from-middle ease 1s forwards";
@@ -98,24 +98,57 @@ $(document).ready(function () {
     return data;
   };
 
-  const fillDataFromGithub = async () => {
-    const data = await getGithubStats("SyedAli310");
-    //console.log(data);
-    const avatarImg = document.querySelector("#gh-avatar");
-    const name = document.querySelector("#gh-name");
-    const bio = document.querySelector("#gh-bio");
-    const joined = document.querySelector("#gh-joined");
-    const repos = document.querySelector("#gh-repos");
-    avatarImg.src = data.avatar_url;
-    name.innerHTML = `${data.name} <br> <span style='font-size:smaller; opacity:0.5;'>${data.login}</span>`;
-    bio.innerHTML = `<span style='color:grey;'>Bio :</span> ${data.bio}`;
-    joined.innerHTML = `<span style='color:grey;'>Joined :</span> ${new Date(
-      data.created_at
-    ).getMonth()}/${new Date(data.created_at).getFullYear()}`;
-    repos.innerHTML = `<span style='color:grey;'>Repos :</span> ${data.public_repos}`;
+  const fillDataFromGithub = async (username) => {
+    try {
+      const gh_stats = document.getElementById("github-stats");
+      gh_stats.innerHTML = `<div class="spinner-lg"></div>`;
+      const data = await getGithubStats(username);
+      console.log(data);
+      if (Object.keys(data).includes("message")) {
+        gh_stats.innerHTML = `<h2 style="color:var(--TEXT_DANGER); text-align:center;">Invalid Username</h2>`;
+        return;
+      }
+      gh_stats.innerHTML = `
+      <div class="github-user">
+      <a href="https://github.com/${data.login}" target="_blank" class='github-profile-link'>
+      <div class="user-profile">
+        <img src="${data.avatar_url}" alt="" id="gh-avatar" class="gh-avatar">
+        <p id="gh-name">${data.name || "Not Set"}<br> 
+        <span style='font-size:smaller; opacity:0.5;'>${data.login}</span>
+        </p>
+        </div>
+      </a>
+      <div class="user-info">
+          <p id="gh-bio"><span style='color:grey;'>Bio :</span> ${
+            data.bio || "Not Set"
+          }</p>
+          <p id="gh-joined"><span style='color:grey;'>Joined :</span> ${new Date(
+            data.created_at
+          ).getMonth()}/${new Date(data.created_at).getFullYear()}</p>
+          <p id="gh-repos"><span style='color:grey;'>Repos :</span> ${
+            data.public_repos
+          }</p>
+      </div>
+      </div>
+      <div class="github-contributions">
+        <h1>Contributions</h1>
+        <img src="https://ghchart.rshah.org/green/${username}" id="contributions-img" alt="Syed Ali Contributions - GitHub">
+      </div>
+      `;
+    } catch (error) {
+      gh_stats.innerHTML = `<h2 style="color:var(--TEXT_DANGER); text-align:center;">${error.message}</h2>`;
+      return;
+    }
   };
-  window.onload = fillDataFromGithub();
+  window.onload = fillDataFromGithub("SyedAli310");
 
+  $('#gh-finder').on('submit', async (e) => {
+    e.preventDefault();
+    const username = $('#gh-username-inp').val();
+    if (username) {
+      fillDataFromGithub(username);
+    }
+  });
   //floating input labels on focus
   getInTouchFormInpFields.forEach((field) => {
     $(field).on("focus", (e) => {

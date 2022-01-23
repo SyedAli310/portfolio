@@ -226,8 +226,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   background-color: #0d1017;
   padding: 2rem;
@@ -250,6 +250,13 @@
   gap: 2rem;
   color: var(--WHITE);
   font-size: large;
+}
+.github-stats .github-user .github-profile-link{
+  transition: all ease 300ms;
+}
+.github-stats .github-user .github-profile-link:hover {
+  color: var(--MAIN_ACCENT);
+  transform: scale(1.025);
 }
 .github-stats .github-user .user-profile{
   width: 100%;

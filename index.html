@@ -89,25 +89,23 @@
             <span> Get in Touch</span>
           </button>
         </hero>
-        <a href="https://github.com/SyedAli310" target="_blank">
-        <div class="github-stats">
-          <div class="github-user">
-            <div class="user-profile">
-              <img src="" alt="" id="gh-avatar" class="gh-avatar">
-              <p id="gh-name"></p>
-            </div>
-            <div class="user-info">
-                <p id="gh-bio"></p>
-                <p id="gh-joined"></p>
-                <p id="gh-repos"></p>
-            </div>
+        <form id="gh-finder">
+          <div class="input-group" style="width: 100%;">
+            <label for="gh-username-inp" class="input-label">GitHub Username</label>
+            <input
+              class="input-field"
+              type="text"
+              name="name"
+              id="gh-username-inp"
+              placeholder="Try your GitHub Username"
+              autocomplete="off"
+              required
+            />
           </div>
-          <div class="github-contributions">
-            <h1>Contributions</h1>
-            <img src="https://ghchart.rshah.org/green/SyedAli310" alt="Syed Ali Contributions - GitHub">
-          </div>
-        </div>
-      </a>
+        </form>
+        <br>
+        <div class="github-stats" id="github-stats"></div>
+
         <div class="test" style="margin-top: 2.5rem">
           <h1 style="text-align: center; color: var(--MAIN_ACCENT)">
             This is a test div
