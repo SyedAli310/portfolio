@@ -1,0 +1,257 @@
+.animated-text-hero {
+  position: relative;
+  min-height: 80vh;
+  width: 100%;
+  text-align: center;
+  font-size: xx-large;
+  font-family: var(--MAIN_FONT);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transform: translateY(-10%);
+  opacity: 0;
+  margin-bottom: 2.5rem;
+}
+
+.animated-text-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/blob-1.svg") no-repeat center center;
+  background-position: fixed;
+  background-size: cover auto;
+  opacity: 0.25;
+  backdrop-filter: blur(10px);
+  z-index: -1;
+  transition: all ease 300ms;
+}
+
+.animated-text-hero h1 {
+  position: relative;
+  color: var(--MAIN_ACCENT);
+  margin-bottom: 1rem;
+}
+.animated-text-hero .hi-span {
+  display: inline-block;
+  transform: translate(-100%);
+  opacity: 0;
+  font-size: 8rem;
+}
+.animated-text-hero .hi-span img {
+  height: 75px;
+  width: auto;
+  position: absolute;
+  left: -50%;
+  top: 25%;
+}
+
+.animated-text-hero h2 {
+  overflow: hidden;
+  position: relative;
+  color: var(--WHITE);
+  margin-bottom: 0.5rem;
+  transition: all ease 300ms;
+}
+.profession-span {
+  display: flex;
+  align-items: center;
+  color: var(--MAIN_ACCENT);
+  border-radius: 3px;
+  padding: 0 0.5rem;
+  transition: all ease 750ms;
+}
+.profession-span.pre-animation {
+  opacity: 0;
+  transform: translateY(100%) scale(0.75);
+}
+
+.get-in-touch-btn {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 12px 22px;
+  margin-top: 2rem;
+  border: none !important;
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--COLORFULL_YELLOW);
+  font-size: x-large;
+  transition: all ease 300ms;
+}
+.get-in-touch-btn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  background-color: var(--LIGHT_BLACK);
+  border-radius: 6px;
+  z-index: -1;
+  transition: all ease 300ms;
+}
+.get-in-touch-btn:hover {
+  background-color: unset;
+  border: unset;
+}
+.get-in-touch-btn span {
+  position: relative;
+  margin-bottom: 0.5rem;
+  transition: all ease 300ms;
+}
+.get-in-touch-btn span::before {
+  content: "";
+  position: absolute;
+  bottom: -0.25rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 2px;
+  background-color: var(--COLORFULL_YELLOW);
+  border-radius: 6px;
+  z-index: -1;
+  transition: all ease 300ms;
+}
+.get-in-touch-btn span:hover::before {
+  width: 75%;
+  transition-delay: 300ms;
+}
+
+.get-in-touch-btn:hover::before {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid var(--WHITE);
+}
+.get-in-touch-btn ion-icon {
+  transform: rotate(-45deg);
+}
+.get-in-touch-btn:hover > ion-icon {
+  animation: bibble 2s ease-in-out infinite;
+}
+
+.socials {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem 0;
+  background-color: var(--BG_SHADE_LIGHTER);
+  border-radius: 10px;
+  margin: 1.5rem 0;
+}
+.get-in-touch-modal-sub-heading {
+  color: var(--COLORFULL_YELLOW);
+  font-size: large;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.get-in-touch-form {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  background-color: var(--BG_SHADE_LIGHTER);
+  border-radius: 10px;
+}
+
+.modal-send-msg-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--TEXT_SUCCESS);
+  color: var(--WHITE);
+  border: 2px solid var(--TEXT_SUCCESS);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all ease 300ms;
+}
+
+.modal-send-msg-btn:hover,
+.modal-send-msg-btn:focus-visible {
+  background-color: var(--MAIN_ACCENT);
+  border: 2px solid var(--WHITE);
+}
+.modal-send-msg-btn ion-icon {
+  transition: all ease 300ms;
+}
+.modal-send-msg-btn:hover > ion-icon {
+  transform: translateX(10%);
+}
+
+.name-span-div {
+  margin-bottom: 1rem;
+}
+.name-span {
+  position: relative;
+  white-space: nowrap;
+  color: var(--COLORFULL_YELLOW);
+  font-family: var(--LOGO_FONT);
+  letter-spacing: 5px;
+  transition: all ease 300ms;
+}
+.name-span::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 2px;
+  background: var(--COLORFULL_YELLOW);
+  opacity: 0;
+  transition: all ease 300ms;
+}
+.name-span:hover {
+  color: var(--COLORFULL_PURPLE);
+}
+.name-span:hover::after {
+  opacity: 1;
+  width: 65%;
+}
+
+/* github content styles  */
+.github-stats {
+  position: relative;
+  width: auto;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  background-color: #0d1017;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.github-stats::before {
+  content: "GITHUB";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: var(--TEXT_SUCCESS);
+  transition: all ease 300ms;
+}
+.github-user {
+  color: var(--WHITE);
+  font-size: large;
+}
+.github-user #gh-name {
+  margin: 0 !important;
+}
+#gh-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+/* end of github content styles  */
