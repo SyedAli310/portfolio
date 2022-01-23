@@ -222,6 +222,17 @@
 }
 
 /* github content styles  */
+.github-glimpse{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+.github-glimpse__title{
+  font-size: x-large;
+  color: var(--COLORFULL_YELLOW);
+  margin-bottom: 1rem;
+}
 .github-stats {
   position: relative;
   display: flex;
