@@ -162,7 +162,7 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 /* spinner style */
-#spinner-lg {
+.spinner-lg {
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -172,7 +172,7 @@ select:-webkit-autofill:focus {
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
 }
-#spinner-md {
+.spinner-md {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -182,7 +182,7 @@ select:-webkit-autofill:focus {
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
 }
-#spinner-sm {
+.spinner-sm {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -402,18 +402,6 @@ nav {
   transform: translateX(1000%);
   transition: all 300ms ease;
 }
-/* .navbar::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--LIGHT_BLACK);
-  opacity: 0.5;
-  transition: all ease 300ms;
-} */
 .navbar-title {
   width: 100%;
   font-size: x-large;
@@ -570,7 +558,7 @@ nav {
   }
 }
 
-#animated-text-hero {
+.animated-text-hero {
   position: relative;
   min-height: 80vh;
   width: 100%;
@@ -587,7 +575,7 @@ nav {
   margin-bottom: 2.5rem;
 }
 
-#animated-text-hero::before {
+.animated-text-hero::before {
   content: "";
   position: absolute;
   top: 0;
@@ -608,18 +596,18 @@ nav {
     transform: translateY(0);
   }
 }
-#animated-text-hero h1 {
+.animated-text-hero h1 {
   position: relative;
   color: var(--MAIN_ACCENT);
   margin-bottom: 1rem;
 }
-#animated-text-hero .hi-span {
+.animated-text-hero .hi-span {
   display: inline-block;
   transform: translate(-100%);
   opacity: 0;
   font-size: 8rem;
 }
-#animated-text-hero .hi-span img {
+.animated-text-hero .hi-span img {
   height: 75px;
   width: auto;
   position: absolute;
@@ -632,7 +620,7 @@ nav {
     opacity: 1;
   }
 }
-#animated-text-hero h2 {
+.animated-text-hero h2 {
   overflow: hidden;
   position: relative;
   color: var(--WHITE);
@@ -953,7 +941,7 @@ nav {
   width: 100%;
   border-radius: 5px;
 }
-#get-in-touch-form {
+.get-in-touch-form {
   position: relative;
   width: 100%;
   height: auto;
@@ -1038,7 +1026,7 @@ nav {
   transition-delay: 150ms;
 }
 
-#modal-send-msg-btn {
+.modal-send-msg-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1053,15 +1041,15 @@ nav {
   transition: all ease 300ms;
 }
 
-#modal-send-msg-btn:hover,
-#modal-send-msg-btn:focus-visible {
+.modal-send-msg-btn:hover,
+.modal-send-msg-btn:focus-visible {
   background-color: var(--MAIN_ACCENT);
   border: 2px solid var(--WHITE);
 }
-#modal-send-msg-btn ion-icon {
+.modal-send-msg-btn ion-icon {
   transition: all ease 300ms;
 }
-#modal-send-msg-btn:hover > ion-icon {
+.modal-send-msg-btn:hover > ion-icon {
   transform: translateX(10%);
 }
 

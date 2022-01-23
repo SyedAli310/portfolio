@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  const animatedHero = document.querySelector("#animated-text-hero");
-  const hiSpan = document.querySelector("#animated-text-hero .hi-span");
+  const animatedHero = document.querySelector(".animated-text-hero");
+  const hiSpan = document.querySelector(".animated-text-hero .hi-span");
   const getInTouchFormInpFields = document.querySelectorAll('.modal .input-field');
-  const smallSpinner = `<span id='spinner-sm'></span>`
+  const smallSpinner = `<span class='spinner-sm'></span>`
   animatedHero.style.animation = "appear-from-middle ease 1s forwards";
   hiSpan.style.animation =
     "slide-in-left 1s ease 1s forwards, gradient-animation 3s backwards infinite";
