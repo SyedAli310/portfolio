@@ -445,6 +445,7 @@ select:-webkit-autofill:focus {
   transition: all ease 300ms;
 }
 .mobile-nav-toggle.open .line_1 {
+  width: 100%;
   transform: rotate(45deg) translate(7px, 6px);
   background: var(--TEXT_DANGER);
 }
@@ -455,19 +456,23 @@ select:-webkit-autofill:focus {
   transform: translateX(100%) rotate(15deg);
 }
 .mobile-nav-toggle.open .line_3 {
+  width: 100%;
   transform: rotate(-45deg) translate(7px, -6px);
   background: var(--TEXT_DANGER);
 }
 .hamburger:nth-child(1) {
   transition-delay: 0.1s;
+  width: 75%;
 }
 
 .hamburger:nth-child(2) {
   transition-delay: 0s;
+  width: 100%;
 }
 
 .hamburger:nth-child(3) {
   transition-delay: 0.2s;
+  width: 75%;
 }
 .nav-links {
   position: relative;

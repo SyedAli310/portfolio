@@ -105,7 +105,7 @@ $(document).ready(function () {
       const data = await getGithubStats(username);
       console.log(data);
       if (Object.keys(data).includes("message")) {
-        gh_stats.innerHTML = `<h2 style="color:var(--TEXT_DANGER); text-align:center;">Invalid Username</h2>`;
+        gh_stats.innerHTML = `<h2 style="color:var(--TEXT_DANGER); text-align:center;">Invalid Username, Please try again</h2>`;
         return;
       }
       gh_stats.innerHTML = `
