@@ -525,7 +525,7 @@ select:-webkit-autofill:focus {
   border-radius: 4px;
   background-color: var(--BG_SHADE_DARKER);
   color: var(--MAIN_ACCENT);
-  animation: space-out-in 0.85s ease forwards;
+  letter-spacing: 1.5px;
 }
 .or-section {
   display: flex;
@@ -795,17 +795,6 @@ select:-webkit-autofill:focus {
 
 
 /* keyframes/animations */
-@keyframes space-out-in {
-  0% {
-    letter-spacing: normal;
-  }
-  50% {
-    letter-spacing: 2.5px;
-  }
-  100% {
-    letter-spacing: normal;
-  }
-}
 @keyframes appear-from-middle {
   to {
     opacity: 1;
