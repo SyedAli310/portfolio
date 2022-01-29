@@ -428,12 +428,18 @@
   pointer-events: all;
 }
  .featured-projects-item-links a{
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   font-weight: 500;
   border: unset !important;
-  outline: 1px solid var(--MAIN_ACCENT);
+  outline: 1px solid var(--MAIN_ACCENT) !important;
+  border-radius: 6px;
 }
-.featured-projects-item-content .featured-projects-item-links a:hover{
+ .featured-projects-item-links a:hover{
   border: unset !important;
-  outline: 1px solid var(--MAIN_ACCENT);
+  outline: 1px solid var(--COLORFULL_YELLOW) !important;
+  color: var(--WHITE);
 }
 
 
