@@ -367,10 +367,10 @@
   top: 0rem;
   transform: translate(-50%,-50%);
   background-color: var(--LIGHT_BLACK);
-  color: var(--WHITE);
+  color: var(--MAIN_ACCENT);
   width: min-content;
-  outline: 1px solid var(--BG_SHADE_LIGHTER);
-  border-radius: 4px;
+  outline: 1px solid var(--WHITE);
+  border-radius: 8px;
   padding:0.5rem 1rem;
   font-size: large;
   font-weight: bold;
