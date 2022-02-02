@@ -324,12 +324,12 @@
   height: auto;
   border-radius: 10px;
   margin-bottom: 2.5rem;
-  transition: all ease 300ms;
+  transition: all 300ms ease;
 }
 .featured-projects-item:hover{
-  transform: translate(6px, 7px);
-  box-shadow: -6px -7px 0px var(--MAIN_ACCENT);
-  outline: 2px solid var(--WHITE);
+  transform: translate(0px, -7px);
+  box-shadow: 0px 7px 0px var(--MAIN_ACCENT);
+  outline: 2px solid var(--MAIN_ACCENT);
 }
 @media (max-width: 768px) {
   .featured-projects-container{
@@ -363,24 +363,42 @@
 .featured-projects-item-title{
   width: 75% !important;
   position: absolute;
-  left: 50%;
+  left: 0.5rem;
   top: 0rem;
-  transform: translate(-50%,-50%);
-  background-color: var(--LIGHT_BLACK);
+  transform: translate(0%,-50%);
+  background-color: var(--BG_SHADE_LIGHTER);
   color: var(--MAIN_ACCENT);
   width: min-content;
-  outline: 1px solid var(--WHITE);
-  border-radius: 8px;
+  /* outline: 1px solid var(--WHITE); */
+  outline-offset: -6px;
+  border-radius: 6px;
   padding:0.5rem 1rem;
-  font-size: large;
+  font-size: x-large;
   font-weight: bold;
   text-align: center;
   pointer-events: none;
   box-shadow: 1px 2px 6px black;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 300ms ease 300ms;
+}
+.featured-projects-item-title::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, -50%) rotate(-45deg);
+  width: 5rem;
+  height: 0.5rem;
+  background: var(--COLORFULL_PINK);
+  opacity: 1;
+  z-index: -1;
   transition: all 300ms ease;
 }
 .featured-projects-item:hover > .featured-projects-item-title{
-  visibility: hidden;
+  /* visibility: hidden; */
+  /* opacity: 0; */
+  transform: translate(10%,-50%);
   opacity: 0;
 }
 
@@ -399,7 +417,7 @@
   overflow: scroll;
   line-height: 1.5;
   z-index: 2;
-  transition: all 200ms ease 300ms;
+  transition: all 200ms ease-out 450ms;
 }
 .featured-projects-item-content::-webkit-scrollbar{
   display: none;
@@ -416,15 +434,16 @@
   left: 50%;
   display: flex;
   gap: 1rem;
-  transform: translate(-50%,50%);
+  transform: translate(-40%,50%);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: all 300ms ease 300ms;
+  transition: all 300ms ease 450ms;
 }
 .featured-projects-item:hover > .featured-projects-item-links{
   opacity: 1;
   visibility: visible;
+  transform: translate(-50%,50%);
   pointer-events: all;
 }
  .featured-projects-item-links a{
