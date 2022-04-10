@@ -11,21 +11,21 @@
     <title>Syed Ali &mdash; About</title>
   </head>
   <style>
-      .social-links{
-        gap: 1rem !important; 
-        justify-content: start;
+    .social-links {
+      gap: 1rem !important;
+      justify-content: start;
+    }
+    .social-links a {
+      align-items: start !important;
+      opacity: 0;
+      transform: translateY(-50%);
+      transition: all ease 300ms;
+    }
+    @media (max-width: 768px) {
+      .social-links {
+        justify-content: center;
       }
-      .social-links a{
-        align-items: start !important;
-        opacity: 0;
-        transform: translateY(-50%);
-        transition: all ease 300ms;
-      }
-      @media (max-width: 768px) {
-        .social-links{
-          justify-content: center;
-        }
-      }
+    }
   </style>
   <body>
     <div class="main-navigation">
@@ -67,6 +67,19 @@
           Some of my<span style="color: var(--MAIN_ACCENT)"> BLOGS</span>.
         </h1>
 
+        <div
+          style="
+            color: var(--WHITE);
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: alertAppear 1s ease infinite,
+              gradient-animation 1s ease infinite;
+          "
+        >
+          <h2 style="width: max-content">coming soon...</h2>
+        </div>
       </div>
     </main>
 
@@ -127,21 +140,28 @@
           </div>
         </div>
         <div class="footer-right">
-          
           <div class="subscribe-footer">
             <div class="input-group">
               <label for="subscribe-inp">Subscribe</label>
-              <input class="input-field" type="email" id="subscribe-inp" name="subscribe-inp" placeholder="enter email">
+              <input
+                class="input-field"
+                type="email"
+                id="subscribe-inp"
+                name="subscribe-inp"
+                placeholder="enter email"
+              />
             </div>
           </div>
         </div>
       </div>
       <div class="copy-right-footer">
         <span id="hr"></span>
-        <p>&copy; <span class="footer-year"></span> Syed Ali &bull; All Rights Reserved.</p>
+        <p>
+          &copy; <span class="footer-year"></span> Syed Ali &bull; All Rights
+          Reserved.
+        </p>
       </div>
     </div>
-  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
