@@ -28,7 +28,9 @@ $(document).ready(() => {
     $(".modal").addClass("active");
   });
   $(".modal-close-btn").on("click", (e) => {
-    $(".modal").toggleClass("active");
+    // get the parent modal
+    const parentModal = $(e.target).closest(".modal");
+    $(parentModal).toggleClass("active");
   });
 
   // close modal on clicking outside of modal
