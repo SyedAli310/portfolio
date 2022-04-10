@@ -871,6 +871,23 @@ select:-webkit-autofill:focus {
     opacity: 1;
   }
 }
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @keyframes alertAppear {
   from {
     right: -300px;
@@ -896,7 +913,7 @@ select:-webkit-autofill:focus {
   z-index: 9999;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   padding: 1rem;
   line-height: 1.5;
