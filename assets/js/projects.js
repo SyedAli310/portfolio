@@ -13,6 +13,47 @@ $(document).ready(function () {
     });
   };
 
+  function getInitials(fullName) {
+    let response = "";
+    var specialCharsNums = /[!@#$%^&*!()_+\-=\[\]{};':"\\|,.<>\/?0123456789]+/;
+    if (specialCharsNums.test(fullName)) {
+      fullName = fullName.replace(
+        /[&\/\\@#!,+()$~%^.'":*?<>{}0123456789]/g,
+        ""
+      );
+    }
+
+    fullName = fullName.replace(/\s+/g, " ");
+    fullName = fullName.trim();
+    localStorage.setItem("f_name", fullName);
+    //console.log('Full name after processing: ',fullName); //dev-purpose-log
+    if (fullName.length <= 1) {
+      response = "error";
+    } else {
+      let fullNameArr = fullName.split(" ");
+      console.log("Array constructed: ", fullNameArr); //dev-purpose-log
+      if (typeof fullNameArr[1] === "undefined") {
+        response =
+          fullNameArr[0][0].toUpperCase() + fullNameArr[0][1].toUpperCase();
+      } else {
+        response =
+          fullNameArr[0][0].toUpperCase() +
+          fullNameArr[fullNameArr.length - 1][0].toUpperCase();
+      }
+    }
+    // console.log('Func res = ',response); //dev-purpose-log
+    return response;
+  }
+
+  // generate random color
+  function getRandomColor() {
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += Math.floor(Math.random() * 10);
+    }
+    return color;
+  }
+
   const alertCustom = (msg) => {
     // remove previous alert
     const alertPrev = document.querySelector(".alert");
@@ -168,13 +209,14 @@ $(document).ready(function () {
     data.forEach((project, index) => {
       const newCard = document.createElement("div");
       newCard.classList.add("project-card");
-
       newCard.innerHTML = `
-        <div class="project-card-img">
-          <img
-            src="https://picsum.photos/300/200?random=${index}"
-            alt="project-${index}"
-          />
+        <div class="project-card-img"
+        style='
+        --rand-clr-1: ${getRandomColor()};
+        --rand-clr-2: ${getRandomColor()};
+        '
+        >
+          <h1>${getInitials(project.name)}</h1>
         </div>
         <div class="project-card-title">${project.name}</div>
           <div class="project-card-links">
@@ -189,7 +231,7 @@ $(document).ready(function () {
         </div>
         <div class="project-card-content">
         <h4>
-          <span>${project.name}</span> 
+          <span style='color:var(--MAIN_ACCENT);'>${project.name}</span> 
           <button class='btn project-view-btn' data-project-url='${
             project.url
           }'><ion-icon name="expand"></ion-icon></button>
@@ -206,18 +248,6 @@ $(document).ready(function () {
           </small>
         </div>
       `;
-      // const projectLangs = await getLanguagesOfProject(project.languages_url);
-      // newCard.querySelector(".languages-tags").innerHTML = `
-      //   <span>Languages: </span>
-      //   <span style='color:var(--MAIN_ACCENT);'>
-      //   ${
-      //     projectLangs
-      //       ? Object.keys(projectLangs).join(" | ")
-      //       : "No languages specified"
-      //   }
-      //   </span>
-      // `;
-
       cardsContainer.append(newCard);
     });
     bindHomepageCheckerEvent(document.querySelectorAll(".homepage-checker"));
