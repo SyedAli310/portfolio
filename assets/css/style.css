@@ -25,6 +25,10 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+body,
+* {
+  box-sizing: border-box;
+}
 body {
   overflow-x: hidden !important;
   position: relative;
@@ -869,11 +873,11 @@ select:-webkit-autofill:focus {
 }
 @keyframes alertAppear {
   from {
-    top: -300px;
+    right: -300px;
     opacity: 0;
   }
   to {
-    top: 4rem;
+    right: 2rem;
     opacity: 1;
   }
 }
@@ -881,21 +885,49 @@ select:-webkit-autofill:focus {
 
 .alert {
   position: fixed;
-  top: 4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 300px;
-  width: auto;
+  top: 6.5rem;
+  right: 2rem;
+  width: 300px;
   height: auto;
   background-color: var(--LIGHT_BLACK);
-  color: var(--TEXT_DANGER);
-  border: 1.5px solid var(--MAIN_ACCENT);
+  color: var(--WHITE);
+  border: 1.5px solid var(--TEXT_DANGER);
   border-radius: 5px;
   z-index: 9999;
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  line-height: 1.5;
+  font-size: larger;
+  box-shadow: 2px 4px 8px 0px var(--BLACK);
+  animation: alertAppear 0.3s ease forwards;
+}
+.alert > ion-icon {
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 0;
+}
+
+.alert .alert-close-btn {
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  font-weight: bold;
-  animation: alertAppear 0.5s ease forwards;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  font-size: 2rem;
+  color: var(--WHITE);
+  cursor: pointer;
+  background-color: inherit;
+  padding: 0;
+  border-radius: 100%;
+  outline: none;
+  border: none;
+  transition: all ease 300ms;
+}
+.alert .alert-close-btn:hover {
+  color: var(--TEXT_DANGER);
+  background-color: inherit;
 }
