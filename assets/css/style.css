@@ -85,7 +85,6 @@ ion-icon {
   position: relative;
   min-height: 90vh;
   margin-top: 7rem;
-  
 }
 .container {
   position: relative;
@@ -793,7 +792,6 @@ select:-webkit-autofill:focus {
 }
 /* footer styles end */
 
-
 /* keyframes/animations */
 @keyframes appear-from-middle {
   to {
@@ -869,4 +867,35 @@ select:-webkit-autofill:focus {
     opacity: 1;
   }
 }
+@keyframes alertAppear {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 4rem;
+    opacity: 1;
+  }
+}
 /* keyframes/animations end */
+
+.alert {
+  position: fixed;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 300px;
+  width: auto;
+  height: auto;
+  background-color: var(--LIGHT_BLACK);
+  color: var(--TEXT_DANGER);
+  border: 1.5px solid var(--MAIN_ACCENT);
+  border-radius: 5px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-weight: bold;
+  animation: alertAppear 0.5s ease forwards;
+}
