@@ -13,7 +13,7 @@ $(document).ready(function () {
     });
   };
 
-  function getInitials(fullName) {
+  const getInitials = (fullName) => {
     let response = "";
     var specialCharsNums = /[!@#$%^&*!()_+\-=\[\]{};':"\\|,.<>\/?0123456789]+/;
     if (specialCharsNums.test(fullName)) {
@@ -31,7 +31,7 @@ $(document).ready(function () {
       response = "error";
     } else {
       let fullNameArr = fullName.split(" ");
-      console.log("Array constructed: ", fullNameArr); //dev-purpose-log
+      // console.log("Array constructed: ", fullNameArr); //dev-purpose-log
       if (typeof fullNameArr[1] === "undefined") {
         response =
           fullNameArr[0][0].toUpperCase() + fullNameArr[0][1].toUpperCase();
@@ -43,7 +43,7 @@ $(document).ready(function () {
     }
     // console.log('Func res = ',response); //dev-purpose-log
     return response;
-  }
+  };
 
   // generate random color
   function getRandomColor() {
@@ -91,10 +91,23 @@ $(document).ready(function () {
     });
   };
 
+  const addLanguagesPercentage = (langs) => {
+    let total = 0;
+    Object.keys(langs).forEach((lang) => {
+      total += langs[lang];
+    });
+    Object.keys(langs).forEach((lang) => {
+      tempPercentage = Number(((langs[lang] / total) * 100).toFixed(1));
+      langs[lang] = tempPercentage;
+    });
+    return langs;
+  };
+
   const getLanguagesOfProject = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
-    return data;
+    const langsWithPercentage = addLanguagesPercentage(data);
+    return langsWithPercentage;
   };
 
   const getRepoData = async (url) => {
@@ -141,58 +154,77 @@ $(document).ready(function () {
     const projectLangs = await getLanguagesOfProject(projectData.languages_url);
     console.log(projectData);
     projectViewTitle.innerHTML = projectData.name;
-    projectViewContent.innerHTML = `
-    <h4>${
-      projectData.description
-        ? projectData.description
-        : "No description available"
-    }</h4>
-    <br>
- 
-      <span>Languages: </span>
-      <span style='color:var(--MAIN_ACCENT);'>
-      ${
-        projectLangs
-          ? Object.keys(projectLangs).join(" | ")
-          : "No languages specified"
-      }
+
+    const descData = projectData.description
+      ? projectData.description
+      : "No description available";
+
+    const descElement = document.createElement("p");
+    descElement.classList.add("project-view-desc");
+    descElement.innerHTML =
+      descData +
+      "<br>" +
+      `<div class='sub-desc'>
+      <span>
+      Date: ${new Date(projectData.created_at).toLocaleDateString()} 
       </span>
-      <br><br>
-        <span> Topics : </span>
-        <span style='color:var(--COLORFULL_YELLOW);'>
-        ${
-          projectData.topics.length > 0
-            ? projectData.topics.join(" | ")
-            : "No topics specified"
-        }
-        </span>
-      
+      &bull;&nbsp;
+      <span>
+      Author: <a href='${projectData.owner.html_url}' target='_blank' >
+      <img src='${projectData.owner.avatar_url}' alt='${
+        projectData.owner.login
+      }' style='width:20px; height:auto;' />
+      ${projectData.owner.login}
+      </a> 
+      </span>
+      </div>`;
+
+    const langsElementWrapper = document.createElement("fieldset");
+    langsElementWrapper.classList.add("langs-container");
+    langsElementWrapper.innerHTML = "<legend>Languages </legend>";
+    Object.keys(projectLangs).forEach((lang) => {
+      const langElement = document.createElement("div");
+      langElement.classList.add("lang-item");
+      langElement.innerHTML = `${lang} - ${projectLangs[lang]}%`;
+      langsElementWrapper.appendChild(langElement);
+    });
+
+    const topicsData = projectData.topics
+      ? projectData.topics
+      : "No topics specified";
+    const topicsElementWrapper = document.createElement("fieldset");
+    topicsElementWrapper.classList.add("topics-container");
+    topicsElementWrapper.innerHTML = "<legend>Topics </legend>";
+    if (topicsData.length > 0) {
+      topicsData.forEach((topic) => {
+        const topicElement = document.createElement("div");
+        topicElement.classList.add("topic-item");
+        topicElement.innerHTML = topic;
+        topicsElementWrapper.appendChild(topicElement);
+      });
+    } else {
+      topicsElementWrapper.innerHTML += "No topics specified";
+    }
+
+    projectViewContent.innerHTML = "";
+    projectViewContent.appendChild(descElement);
+    projectViewContent.appendChild(langsElementWrapper);
+    projectViewContent.appendChild(topicsElementWrapper);
+
+    projectViewContent.innerHTML += `      
 <br><br>
       <div style='display:flex; justify-content:flex-start; align-items:center; gap:1rem;'>
         <a class="btn" href="${projectData.html_url}" target="_blank">
         <ion-icon name="logo-github"></ion-icon>
         Repo
         </a>
-        <button class="btn homepage-checker" style='font-size:inherit;' data-url='${
-          projectData.homepage
-        }'>
+        <button class="btn homepage-checker" style='font-size:inherit;' data-url='${projectData.homepage}'>
           <ion-icon name="eye-outline"></ion-icon>
           Visit
         </button>
       </div>
 
-      <br>
-      <span style='display:flex; justify-content:flex-start; align-items:center;'>Created by &nbsp;
-      <a href='${
-        projectData.owner.html_url
-      }' target='_blank' style='display:flex; justify-content:flex-start; align-items:center; gap:0.25rem; color:var(--COLORFULL_YELLOW);' >
-      <img src='${projectData.owner.avatar_url}' alt='${
-      projectData.owner.login
-    }' style='width:20px; height:auto;' />
-      ${projectData.owner.login}
-      </a> 
-      &nbsp;on ${new Date(projectData.created_at).toLocaleDateString()}</span>
-               
+       
     `;
     bindHomepageCheckerEvent(
       projectViewModal.querySelectorAll(".homepage-checker")
