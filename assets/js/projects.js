@@ -4,6 +4,9 @@ $(document).ready(function () {
   const cardsContainer = document.querySelector(".projects-container");
 
   const projectViewModal = document.querySelector(".project-view-modal");
+
+  const GITHUB_USERNAME = "SyedAli310";
+
   window.onload = async () => {
     await fillProjectCards();
     console.log("projects loaded");
@@ -154,6 +157,11 @@ $(document).ready(function () {
     const projectLangs = await getLanguagesOfProject(projectData.languages_url);
     console.log(projectData);
     projectViewTitle.innerHTML = projectData.name;
+    if (projectData.fork) {
+      projectViewTitle.classList.add("is-forked");
+    } else {
+      projectViewTitle.classList.remove("is-forked");
+    }
 
     const descData = projectData.description
       ? projectData.description
@@ -182,12 +190,16 @@ $(document).ready(function () {
     const langsElementWrapper = document.createElement("fieldset");
     langsElementWrapper.classList.add("langs-container");
     langsElementWrapper.innerHTML = "<legend>Languages </legend>";
-    Object.keys(projectLangs).forEach((lang) => {
-      const langElement = document.createElement("div");
-      langElement.classList.add("lang-item");
-      langElement.innerHTML = `${lang} - ${projectLangs[lang]}%`;
-      langsElementWrapper.appendChild(langElement);
-    });
+    if (Object.keys(projectLangs).length > 0) {
+      Object.keys(projectLangs).forEach((lang) => {
+        const langElement = document.createElement("div");
+        langElement.classList.add("lang-item");
+        langElement.innerHTML = `${lang} - ${projectLangs[lang]}%`;
+        langsElementWrapper.appendChild(langElement);
+      });
+    } else {
+      langsElementWrapper.innerHTML += "No languages found";
+    }
 
     const topicsData = projectData.topics
       ? projectData.topics
@@ -234,7 +246,9 @@ $(document).ready(function () {
   const fillProjectCards = async () => {
     cardsContainer.innerHTML =
       "<h4 style='color:var(--WHITE);'>Loading projects...</h4>";
-    const res = await fetch("https://api.github.com/users/SyedAli310/repos");
+    const res = await fetch(
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos`
+    );
     const data = await res.json();
     console.log(data);
     cardsContainer.innerHTML = "";

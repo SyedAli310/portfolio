@@ -219,6 +219,22 @@
 /* project styles end  */
 
 /* project view styles */
+#project-view-title {
+  position: relative;
+}
+#project-view-title.is-forked::after {
+  content: "forked";
+  position: relative;
+  background-color: var(--LIGHT_BLACK);
+  outline: 1px solid var(--MAIN_ACCENT);
+  color: var(--WHITE);
+  font-size: x-small;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 20px;
+  z-index: 1;
+}
 .project-view-desc {
   font-size: 1.325rem;
   /* padding-bottom: 0.325rem; */
