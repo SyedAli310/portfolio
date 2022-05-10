@@ -1,2 +1,2 @@
-# portfolio
+# Portfolio
 A modern portfolio design with animations
