@@ -321,7 +321,7 @@
 .featured-projects-item{
   position: relative;
   width: 350px;
-  height: auto;
+  height: 250px;
   border-radius: 10px;
   margin-bottom: 2.5rem;
   transition: all 300ms ease;
@@ -339,6 +339,7 @@
   .featured-projects-item{
     width: 100%;
     flex: 1;
+    height: 150px;
   }
 }
 
