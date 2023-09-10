@@ -1,2 +1,2 @@
 # Portfolio
-A modern portfolio design with animations
+A modern portfolio design with animations and interactions
